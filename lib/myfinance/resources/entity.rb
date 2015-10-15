@@ -34,6 +34,48 @@ module Myfinance
           respond_with_object(response, 'entity')
         end
       end
+
+      #
+      # Return attributes from entity
+      #
+      # [API]
+      #   Method: <tt>GET /entities/new</tt>
+      #
+      #   Documentation: https://app.myfinance.com.br/docs/api/entities#get_new
+      #
+      def get_new
+        http.get("/entities/new", body: {}) do |response|
+          respond_with_object(response, 'entity')
+        end
+      end
+
+      #
+      # Create a specific entity
+      #
+      # [API]
+      #   Method: <tt>POST /entities</tt>
+      #
+      #   Documentation: https://app.myfinance.com.br/docs/api/entities#post_create
+      #
+      def create(params)
+        http.post("/entities", body: params) do |response|
+          respond_with_object(response, 'entity')
+        end
+      end
+
+      #
+      # Update a specific entity
+      #
+      # [API]
+      #   Method: <tt>PUT /entities/:id</tt>
+      #
+      #   Documentation: https://app.myfinance.com.br/docs/api/entities#put_update
+      #
+      def update(entity_id, params)
+        http.put("/entities/#{entity_id}", body: params) do |response|
+          respond_with_object(response, 'entity')
+        end
+      end
     end
   end
 end

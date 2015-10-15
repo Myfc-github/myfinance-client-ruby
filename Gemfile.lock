@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    myfinance (0.3.2)
+    myfinance (0.3.3)
       multi_json (~> 1.11)
       typhoeus (~> 0.7.1)
       virtus (~> 1.0.5)
