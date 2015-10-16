@@ -1,0 +1,103 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: https://sandbox.myfinance.com.br/entities/3800
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - Myfinance Ruby Client v0.3.3
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic YjU1MmRkNWE4NTk4Y2EwODliOTFjNWUzNTVhODNiODZlNDY5NmFlZmFjOWVhYTA1Olg=
+  response:
+    status:
+      code: 202
+      message: Accepted
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 16 Oct 2015 12:26:32 GMT
+      Server:
+      - nginx/1.8.0
+      Set-Cookie:
+      - _financecompany_session=BAh7BkkiD3Nlc3Npb25faWQGOgZFVEkiJTIwNGJiMjNiODY0NDYwZWU0NDRhMmJjMTY3ZjhjZjRjBjsAVA%3D%3D--6e978cbd37e4e95010105704f01fa9a102df9eec;
+        path=/; HttpOnly
+      X-Rack-Cache:
+      - invalidate, pass
+      X-Request-Id:
+      - 4ed8b238e7d6a47e645212b39531654f
+      X-Runtime:
+      - '0.043454'
+      X-UA-Compatible:
+      - IE=Edge,chrome=1
+      Content-Length:
+      - '1'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: " "
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.myfinance.com.br/entities/3800
+  recorded_at: Fri, 16 Oct 2015 12:26:32 GMT
+- request:
+    method: delete
+    uri: https://sandbox.myfinance.com.br/entities/3798
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - Myfinance Ruby Client v0.3.3
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic YjU1MmRkNWE4NTk4Y2EwODliOTFjNWUzNTVhODNiODZlNDY5NmFlZmFjOWVhYTA1Olg=
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 16 Oct 2015 12:45:23 GMT
+      Server:
+      - nginx/1.8.0
+      Set-Cookie:
+      - _financecompany_session=BAh7BkkiD3Nlc3Npb25faWQGOgZFVEkiJWIyNWE4MDdiMzZhNjAyYTM2YmUxMTM1NDIxNTk3M2NiBjsAVA%3D%3D--d9b1d2fbaa7790f1124bb193456cf8abb8c80d30;
+        path=/; HttpOnly
+      X-Rack-Cache:
+      - invalidate, pass
+      X-Request-Id:
+      - 6e994129f29a6b7dfefa67e120f89255
+      X-Runtime:
+      - '0.031390'
+      X-UA-Compatible:
+      - IE=Edge,chrome=1
+      Content-Length:
+      - '64'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"base":["S\u00f3 existe uma entidade.","N\u00e3o \u00e9 poss\u00edvel apagar esta entidade."]}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.myfinance.com.br/entities/3798
+  recorded_at: Fri, 16 Oct 2015 12:45:23 GMT
+recorded_with: VCR 2.9.3

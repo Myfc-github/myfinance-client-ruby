@@ -23,11 +23,11 @@ describe Myfinance::Resources::Entity do
     end
 
     context "when not found" do
-      let(:client) { Myfinance.client('') }
+      let(:client) { Myfinance.client("") }
       subject { client.entities.find_all }
 
       it "raises NotFound" do
-        expect{ subject }.to raise_error(Myfinance::RequestError)
+        expect { subject }.to raise_error(Myfinance::RequestError)
       end
     end
   end
@@ -52,11 +52,11 @@ describe Myfinance::Resources::Entity do
     end
 
     context "when not found" do
-      let(:client) { Myfinance.client('') }
+      let(:client) { Myfinance.client("") }
       subject { client.entities.find(3798) }
 
       it "raises NotFound" do
-        expect{ subject }.to raise_error(Myfinance::RequestError)
+        expect { subject }.to raise_error(Myfinance::RequestError)
       end
     end
   end
@@ -81,11 +81,11 @@ describe Myfinance::Resources::Entity do
     end
 
     context "when not found" do
-      let(:client) { Myfinance.client('') }
+      let(:client) { Myfinance.client("") }
       subject { client.entities.get_new }
 
       it "raises NotFound" do
-        expect{ subject }.to raise_error(Myfinance::RequestError)
+        expect { subject }.to raise_error(Myfinance::RequestError)
       end
     end
   end
@@ -118,11 +118,11 @@ describe Myfinance::Resources::Entity do
     end
 
     context "when not found" do
-      let(:client) { Myfinance.client('') }
+      let(:client) { Myfinance.client("") }
       subject { client.entities.create(params) }
 
       it "raises NotFound" do
-        expect{ subject }.to raise_error(Myfinance::RequestError)
+        expect{  subject }.to raise_error(Myfinance::RequestError)
       end
     end
   end
@@ -155,11 +155,39 @@ describe Myfinance::Resources::Entity do
     end
 
     context "when not found" do
-      let(:client) { Myfinance.client('') }
+      let(:client) { Myfinance.client("") }
       subject { client.entities.update(3828, params) }
 
       it "raises NotFound" do
-        expect{ subject }.to raise_error(Myfinance::RequestError)
+        expect { subject }.to raise_error(Myfinance::RequestError)
+      end
+    end
+  end
+
+  describe "#destroy", vcr: true do
+    context "when success" do
+      subject { client.entities.destroy(3828) }
+
+      it "returns a empty body with code 202" do
+        expect(subject).to eq(202)
+      end
+    end
+
+    context "when not found" do
+      let(:client) { Myfinance.client("") }
+      subject { client.entities.destroy(3828) }
+
+      it "raises NotFound" do
+        expect { subject }.to raise_error(Myfinance::RequestError)
+      end
+    end
+
+    context "when last one entity" do
+      it "does not delete" do
+        entity = client.entities.destroy(3800)
+        expect(entity).to eq(202)
+
+        expect { client.entities.destroy(3798) }.to raise_error(Myfinance::RequestError)
       end
     end
   end

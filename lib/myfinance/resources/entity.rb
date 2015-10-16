@@ -76,6 +76,20 @@ module Myfinance
           respond_with_object(response, 'entity')
         end
       end
+
+      #
+      # Delete a specific entity
+      #
+      # [API]
+      #   Method: <tt>DELETE /entities/:id</tt>
+      #
+      #   Documentation: https://app.myfinance.com.br/docs/api/entities#delete_destroy
+      #
+      def destroy(entity_id)
+        http.delete("/entities/#{entity_id}", body: {}) do |response|
+          response.code
+        end
+      end
     end
   end
 end
