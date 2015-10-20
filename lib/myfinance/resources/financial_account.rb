@@ -100,6 +100,20 @@ module Myfinance
         request_and_build_response(:post, endpoint_for(nil, entity_id, __method__), params)
       end
 
+      #
+      # Create as parcelled payable/receivable account
+      #
+      # [API]
+      #   Method: <tt>POST /entities/:entity_id/payable_accounts</tt>
+      #   Method: <tt>POST /entities/:entity_id/receivable_accounts</tt>
+      #
+      #   Documentation: https://app.myfinance.com.br/docs/api/payable_accounts#post_create_as_parcelled
+      #   Documentation: https://app.myfinance.com.br/docs/api/receivable_accounts#post_create_as_parcelled
+      #
+      def create_as_parcelled(entity_id, params = {})
+        request_and_build_response(:post, endpoint_for(nil, entity_id, __method__), params)
+      end
+
       private
 
       def request_and_build_response(method, endpoint, params={})
@@ -118,7 +132,9 @@ module Myfinance
           get_new: "/entities/:entity_id/#{resource_key}s/new",
           create: "/entities/:entity_id/#{resource_key}s",
           update: "/entities/:entity_id/#{resource_key}s/:id",
-          destroy: "/entities/:entity_id/#{resource_key}s/:id"
+          destroy: "/entities/:entity_id/#{resource_key}s/:id",
+          create_as_recurrent: "/entities/:entity_id/#{resource_key}s",
+          create_as_parcelled: "/entities/:entity_id/#{resource_key}s"
         }
       end
 

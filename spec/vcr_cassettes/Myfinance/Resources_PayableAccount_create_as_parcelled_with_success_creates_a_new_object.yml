@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox.myfinance.com.br/entities/3798/payable_accounts
+    body:
+      encoding: UTF-8
+      string: '{"payable_account":{"due_date":"2015-10-20","amount":150.99,"create_as_recurrent":"monthly","number_of_parcels":7}}'
+    headers:
+      User-Agent:
+      - Myfinance Ruby Client v0.3.3
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic YjU1MmRkNWE4NTk4Y2EwODliOTFjNWUzNTVhODNiODZlNDY5NmFlZmFjOWVhYTA1Olg=
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 20 Oct 2015 18:22:24 GMT
+      ETag:
+      - '"02d107bbb17dab1eb564058047b6eb13"'
+      Location:
+      - https://sandbox.myfinance.com.br/entities/3798/payable_accounts/1298978
+      Server:
+      - nginx/1.8.0
+      Set-Cookie:
+      - _financecompany_session=BAh7BkkiD3Nlc3Npb25faWQGOgZFVEkiJTk5MWRiMzNkYzRmMjNjNDQ0ZDFkNDM4ZGEzYTgyZjJiBjsAVA%3D%3D--4799c4538332f8abffbdbe18c8f4203eebc4b58a;
+        path=/; HttpOnly
+      X-Rack-Cache:
+      - invalidate, pass
+      X-Request-Id:
+      - deb1a95534d1f59c9090e6007f48d21b
+      X-Runtime:
+      - '0.316911'
+      X-UA-Compatible:
+      - IE=Edge,chrome=1
+      transfer-encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"payable_account":{"id":1298978,"entity_id":3798,"status":1,"status_name":"unpaid","due_date":"2015-10-20","occurred_at":null,"amount":"150.99","ticket_amount":null,"interest_amount":null,"discount_amount":null,"total_amount":null,"description":null,"document":null,"document_emission_date":null,"observation":null,"remind":false,"reminded_at":null,"category_id":null,"classification_center_id":null,"expected_deposit_account_id":null,"recurrence_id":8832,"person_id":null,"created_at":"2015-10-20T16:22:24-02:00","updated_at":"2015-10-20T16:22:24-02:00","competency_month":"2015-10","recurrent":false,"parcelled":true,"recurrence_period":"monthly","number_of_parcels":7,"current_parcel":1,"attachment_id_list":[],"financial_account_taxes_attributes":[],"reconciliations":{"financial_transactions":[],"financial_accounts":[]},"links":[{"rel":"self","href":"https://sandbox.myfinance.com.br/entities/3798/payable_accounts/1298978","method":"get"},{"rel":"destroy","href":"https://sandbox.myfinance.com.br/entities/3798/payable_accounts/1298978","method":"delete"},{"rel":"pay","href":"https://sandbox.myfinance.com.br/entities/3798/payable_accounts/1298978/pay","method":"put"},{"rel":"next","href":"https://sandbox.myfinance.com.br/entities/3798/payable_accounts/1298979","method":"get"},{"rel":"destroy_recurrence","href":"https://sandbox.myfinance.com.br/entities/3798/payable_accounts/1298978/recurrence","method":"delete"}]}}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.myfinance.com.br/entities/3798/payable_accounts
+  recorded_at: Tue, 20 Oct 2015 18:22:24 GMT
+recorded_with: VCR 2.9.3
