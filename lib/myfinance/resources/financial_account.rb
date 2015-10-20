@@ -86,6 +86,20 @@ module Myfinance
         end
       end
 
+      #
+      # Create as recurrent payable/receivable account
+      #
+      # [API]
+      #   Method: <tt>POST /entities/:entity_id/payable_accounts</tt>
+      #   Method: <tt>POST /entities/:entity_id/receivable_accounts</tt>
+      #
+      #   Documentation: https://app.myfinance.com.br/docs/api/payable_accounts#post_create_as_recurrent
+      #   Documentation: https://app.myfinance.com.br/docs/api/receivable_accounts#post_create_as_recurrent
+      #
+      def create_as_recurrent(entity_id, params = {})
+        request_and_build_response(:post, endpoint_for(nil, entity_id, __method__), params)
+      end
+
       private
 
       def request_and_build_response(method, endpoint, params={})

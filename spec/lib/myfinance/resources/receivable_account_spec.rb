@@ -230,4 +230,79 @@ describe Myfinance::Resources::ReceivableAccount do
       end
     end
   end
+
+  describe "#create_as_recurrent", vcr: true do
+   let(:params) { { due_date: '2015-10-20', amount: 150.99, create_as_recurrent: "monthly" } }
+   subject { client.receivable_accounts.create(entity_id, params) }
+
+   context "with success" do
+     it "creates a new object" do
+       expect(subject.id).to eq(1298917)
+       expect(subject.due_date).to eq(Date.new(2015, 10, 20))
+       expect(subject.entity_id).to eq(entity_id)
+       expect(subject.status).to eq(1)
+       expect(subject.status_name).to eq('unreceived')
+       expect(subject.occurred_at).to be_nil
+       expect(subject.amount).to eq(150.99)
+       expect(subject.ticket_amount).to be_nil
+       expect(subject.interest_amount).to be_nil
+       expect(subject.discount_amount).to be_nil
+       expect(subject.total_amount).to be_nil
+       expect(subject.description).to be_nil
+       expect(subject.document).to be_nil
+       expect(subject.document_emission_date).to be_nil
+       expect(subject.observation).to be_nil
+       expect(subject.remind).to be_falsy
+       expect(subject.reminded_at).to be_nil
+       expect(subject.income_tax_relevant).to be_falsy
+       expect(subject.category_id).to be_nil
+       expect(subject.classification_center_id).to be_nil
+       expect(subject.expected_deposit_account_id).to be_nil
+       expect(subject.recurrence_id).to eq(8831)
+       expect(subject.person_id).to be_nil
+       expect(subject.created_at).to eq(DateTime.parse("2015-10-20T15:10:44-02:00"))
+       expect(subject.updated_at).to eq(DateTime.parse("2015-10-20T15:10:45-02:00"))
+       expect(subject.recurrent).to be_truthy
+       expect(subject.parcelled).to be_falsy
+       expect(subject.recurrence_period).to eq("monthly")
+       expect(subject.number_of_parcels).to be_nil
+       expect(subject.current_parcel).to be_nil
+       expect(subject.competency_month).to eq("2015-10")
+       expect(subject.financial_account_taxes_attributes).to be_empty
+       expect(subject.links).to eq([
+         {"rel" => "self","href" => "https://sandbox.myfinance.com.br/entities/3798/receivable_accounts/1298917","method" => "get"},
+         {"rel" => "destroy","href" => "https://sandbox.myfinance.com.br/entities/3798/receivable_accounts/1298917","method" => "delete"},
+         {"rel" => "receive","href" => "https://sandbox.myfinance.com.br/entities/3798/receivable_accounts/1298917/receive","method" => "put"},
+         {"rel" => "next","href" => "https://sandbox.myfinance.com.br/entities/3798/receivable_accounts/1298918","method" => "get"},
+         {"rel" => "destroy_recurrence","href" => "https://sandbox.myfinance.com.br/entities/3798/receivable_accounts/1298917/recurrence","method" => "delete"}
+       ])
+     end
+   end
+
+   context "when any data is invalid" do
+     let(:params) { { due_date: '2015-10-20', amount: 150.99, create_as_recurrent: "october" } }
+
+     it "raises Myfinance::RequestError" do
+       expect { subject }.to raise_error(Myfinance::RequestError)
+     end
+
+     it "adds information on request error object" do
+       expect(Myfinance::RequestError).to receive(:new).with(code: 422, message: "Unprocessable Entity", body: { "create_as_recurrent"=>["não está incluso na lista"] }).and_call_original
+       expect { subject }.to raise_error(Myfinance::RequestError)
+     end
+   end
+
+   context "when entity does not exist" do
+     subject { client.receivable_accounts.create(555, {}) }
+
+     it "raises Myfinance::RequestError" do
+       expect { subject }.to raise_error(Myfinance::RequestError)
+     end
+
+     it "adds information on request error object" do
+       expect(Myfinance::RequestError).to receive(:new).with(code: 403, message: "Forbidden", body: {"error" => "Você não tem permissão para acessar este recurso." }).and_call_original
+       expect { subject }.to raise_error(Myfinance::RequestError)
+     end
+   end
+ end
 end
