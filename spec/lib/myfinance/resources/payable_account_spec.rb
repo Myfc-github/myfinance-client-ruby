@@ -3,6 +3,75 @@ require "spec_helper"
 describe Myfinance::Resources::PayableAccount do
   let(:entity_id) { 3798 }
 
+  describe "#find_all", vcr: true do
+    subject { client.payable_accounts.find_all(entity_id) }
+
+    context "when success" do
+      it "returns all payable_accounts" do
+        expect(subject.class).to eq(Myfinance::Entities::PayableAccountCollection)
+        expect(subject.collection.first.class).to eq(Myfinance::Entities::PayableAccount)
+        expect(subject.collection.first.id).to eq(1225322)
+        expect(subject.collection.size).to eq(50)
+      end
+    end
+
+    context "when not found" do
+      let(:client) { Myfinance.client("") }
+      subject { client.payable_accounts.find_all(entity_id) }
+
+      it "raises NotFound" do
+        expect { subject }.to raise_error(Myfinance::RequestError)
+      end
+    end
+  end
+
+  describe "#get_new", vcr: true do
+    context "when success" do
+      subject { client.payable_accounts.get_new(entity_id) }
+
+      it "returns empty payable_account" do
+        expect(subject.class).to eq(Myfinance::Entities::PayableAccount)
+        expect(subject.id).to be_nil
+        expect(subject.due_date).to eq(Date.new(2015, 10, 20))
+        expect(subject.entity_id).to eq(entity_id)
+        expect(subject.occurred_at).to be_nil
+        expect(subject.amount).to be_nil
+        expect(subject.ticket_amount).to be_nil
+        expect(subject.interest_amount).to be_nil
+        expect(subject.discount_amount).to be_nil
+        expect(subject.total_amount).to be_nil
+        expect(subject.description).to be_nil
+        expect(subject.document).to be_nil
+        expect(subject.document_emission_date).to be_nil
+        expect(subject.observation).to be_nil
+        expect(subject.remind).to be_falsy
+        expect(subject.reminded_at).to be_nil
+        expect(subject.income_tax_relevant).to be_falsy
+        expect(subject.category_id).to be_nil
+        expect(subject.classification_center_id).to be_nil
+        expect(subject.expected_deposit_account_id).to be_nil
+        expect(subject.recurrence_id).to be_nil
+        expect(subject.person_id).to be_nil
+        expect(subject.recurrent).to be_falsy
+        expect(subject.parcelled).to be_falsy
+        expect(subject.recurrence_period).to be_nil
+        expect(subject.number_of_parcels).to be_nil
+        expect(subject.current_parcel).to be_nil
+        expect(subject.competency_month).to be_nil
+        expect(subject.financial_account_taxes_attributes).to be_empty
+      end
+    end
+
+    context "when not found" do
+      let(:client) { Myfinance.client("") }
+      subject { client.payable_accounts.get_new(entity_id) }
+
+      it "raises NotFound" do
+        expect { subject }.to raise_error(Myfinance::RequestError)
+      end
+    end
+  end
+
   describe "#create", vcr: true do
     let(:params) { { due_date: '2015-08-15', amount: 150.99 } }
     subject { client.payable_accounts.create(entity_id, params) }

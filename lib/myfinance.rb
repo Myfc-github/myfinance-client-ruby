@@ -13,6 +13,8 @@ require "myfinance/entities/entity_collection"
 require "myfinance/entities/financial_account"
 require "myfinance/entities/payable_account"
 require "myfinance/entities/receivable_account"
+require "myfinance/entities/payable_account_collection"
+require "myfinance/entities/receivable_account_collection"
 
 require "myfinance/resources/base"
 require "myfinance/resources/entity"

@@ -7,6 +7,41 @@ module Myfinance
         set_method_for(pay_or_receive_method)
         set_method_for(undo_payment_or_receivement)
       end
+
+      #
+      # List a payables/receivables account
+      #
+      # [API]
+      #   Method: <tt>GET /entities/:entity_id/payable_accounts</tt>
+      #   Method: <tt>GET /entities/:entity_id/receivable_accounts</tt>
+      #
+      #   Documentation: https://app.myfinance.com.br/docs/api/payable_accounts#get_index
+      #   Documentation: https://app.myfinance.com.br/docs/api/receivable_accounts#get_index
+      #
+      def find_all(entity_id)
+        endpoint = endpoint_for(nil, entity_id, __method__)
+        http.get(endpoint, body: {}) do |response|
+          respond_with_collection(response)
+        end
+      end
+
+      #
+      # Generate a empty object from payables/receivables account
+      #
+      # [API]
+      #   Method: <tt>GET /entities/:entity_id/payable_accounts/new</tt>
+      #   Method: <tt>GET /entities/:entity_id/receivable_accounts/new</tt>
+      #
+      #   Documentation: https://app.myfinance.com.br/docs/api/payable_accounts#get_new
+      #   Documentation: https://app.myfinance.com.br/docs/api/receivable_accounts#get_new
+      #
+      def get_new(entity_id)
+        endpoint = endpoint_for(nil, entity_id, __method__)
+        http.get(endpoint, body: {}) do |response|
+          respond_with_object(response, resource_key)
+        end
+      end
+
       #
       # Creates a payable/receivable account
       #
@@ -18,7 +53,7 @@ module Myfinance
       #   Documentation: https://app.myfinance.com.br/docs/api/receivable_accounts#post_create
       #
       def create(entity_id, params = {})
-        request_and_build_response(:post, endpoint_for(nil, entity_id, :create), params)
+        request_and_build_response(:post, endpoint_for(nil, entity_id, __method__), params)
       end
 
       #
@@ -32,7 +67,7 @@ module Myfinance
       #   Documentation: https://app.myfinance.com.br/docs/api/receivable_accounts#put_update
       #
       def update(id, entity_id, params = {})
-        request_and_build_response(:put, endpoint_for(id, entity_id, :update), params)
+        request_and_build_response(:put, endpoint_for(id, entity_id, __method__), params)
       end
 
       #
@@ -46,7 +81,7 @@ module Myfinance
       #   Documentation: https://app.myfinance.com.br/docs/api/receivable_accounts#delete_destroy
       #
       def destroy(id, entity_id)
-        http.delete(endpoint_for(id, entity_id, :destroy)) do |response|
+        http.delete(endpoint_for(id, entity_id, __method__)) do |response|
           true
         end
       end
@@ -65,6 +100,8 @@ module Myfinance
 
       def default_endpoints
         {
+          find_all: "/entities/:entity_id/#{resource_key}s",
+          get_new: "/entities/:entity_id/#{resource_key}s/new",
           create: "/entities/:entity_id/#{resource_key}s",
           update: "/entities/:entity_id/#{resource_key}s/:id",
           destroy: "/entities/:entity_id/#{resource_key}s/:id"
