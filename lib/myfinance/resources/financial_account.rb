@@ -114,6 +114,22 @@ module Myfinance
         request_and_build_response(:post, endpoint_for(nil, entity_id, __method__), params)
       end
 
+      #
+      # Destroy a recorrent payable/receivable account
+      #
+      # [API]
+      #   Method: <tt>DELETE /entities/:entity_id/payable_accounts/:id/recurrence</tt>
+      #   Method: <tt>DELETE /entities/:entity_id/receivable_accounts/:id/recurrence</tt>
+      #
+      #   Documentation: https://app.myfinance.com.br/docs/api/payable_accounts#delete_destroy_as_recurrent
+      #   Documentation: https://app.myfinance.com.br/docs/api/receivable_accounts#delete_destroy_as_recurrent
+      #
+      def destroy_as_recurrent(id, entity_id)
+        http.delete(endpoint_for(id, entity_id, __method__)) do |response|
+          true
+        end
+      end
+
       private
 
       def request_and_build_response(method, endpoint, params={})
@@ -134,7 +150,8 @@ module Myfinance
           update: "/entities/:entity_id/#{resource_key}s/:id",
           destroy: "/entities/:entity_id/#{resource_key}s/:id",
           create_as_recurrent: "/entities/:entity_id/#{resource_key}s",
-          create_as_parcelled: "/entities/:entity_id/#{resource_key}s"
+          create_as_parcelled: "/entities/:entity_id/#{resource_key}s",
+          destroy_as_recurrent: "/entities/:entity_id/#{resource_key}s/:id/recurrence"
         }
       end
 

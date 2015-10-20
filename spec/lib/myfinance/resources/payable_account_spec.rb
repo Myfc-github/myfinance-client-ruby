@@ -73,7 +73,7 @@ describe Myfinance::Resources::PayableAccount do
   end
 
    describe "#create", vcr: true do
-    let(:params) { { due_date: '2015-08-15', amount: 150.99 } }
+    let(:params) { { due_date: "2015-08-15", amount: 150.99 } }
     subject { client.payable_accounts.create(entity_id, params) }
 
     context "with success" do
@@ -82,7 +82,7 @@ describe Myfinance::Resources::PayableAccount do
         expect(subject.due_date).to eq(Date.new(2015, 8, 15))
         expect(subject.entity_id).to eq(entity_id)
         expect(subject.status).to eq(1)
-        expect(subject.status_name).to eq('unpaid')
+        expect(subject.status_name).to eq("unpaid")
         expect(subject.occurred_at).to be_nil
         expect(subject.amount).to eq(150.99)
         expect(subject.ticket_amount).to be_nil
@@ -113,7 +113,7 @@ describe Myfinance::Resources::PayableAccount do
       end
 
       context "when the payable_account has occurred_at value defined" do
-        let(:params) { { due_date: '2015-08-01', amount: 150.99, occurred_at: '2015-08-05', total_amount: 150.99 } }
+        let(:params) { { due_date: "2015-08-01", amount: 150.99, occurred_at: "2015-08-05", total_amount: 150.99 } }
 
         it "creates a new payable_account as paid" do
           expect(subject.id).to eq(1215632)
@@ -122,13 +122,13 @@ describe Myfinance::Resources::PayableAccount do
           expect(subject.amount).to eq(150.99)
           expect(subject.total_amount).to eq(150.99)
           expect(subject.status).to eq(2)
-          expect(subject.status_name).to eq('paid')
+          expect(subject.status_name).to eq("paid")
         end
       end
     end
 
     context "when any data is invalid" do
-      let(:params) { { due_date: '', amount: 150.99 } }
+      let(:params) { { due_date: "", amount: 150.99 } }
 
       it "raises Myfinance::RequestError" do
         expect { subject }.to raise_error(Myfinance::RequestError)
@@ -155,14 +155,14 @@ describe Myfinance::Resources::PayableAccount do
   end
 
   describe "#pay", vcr: true do
-    let(:params) { { total_amount: 150.99, occurred_at: '2015-08-05', amount: 150.99 } }
+    let(:params) { { total_amount: 150.99, occurred_at: "2015-08-05", amount: 150.99 } }
     subject { client.payable_accounts.pay(1215631, entity_id, params) }
 
     context "with success" do
       it "pays payable account" do
         expect(subject.id).to eq(1215631)
         expect(subject.status).to eq(2)
-        expect(subject.status_name).to eq('paid')
+        expect(subject.status_name).to eq("paid")
         expect(subject.amount).to eq(150.99)
         expect(subject.total_amount).to eq(150.99)
         expect(subject.ticket_amount).to be_nil
@@ -172,7 +172,7 @@ describe Myfinance::Resources::PayableAccount do
     end
 
     context "when any parameter is invalid" do
-      let(:params) { { total_amount: nil, occurred_at: '2015-08-05', amount: 150.99 } }
+      let(:params) { { total_amount: nil, occurred_at: "2015-08-05", amount: 150.99 } }
 
       it "raises request error" do
         expect { subject }.to raise_error(Myfinance::RequestError)
@@ -186,7 +186,7 @@ describe Myfinance::Resources::PayableAccount do
     it "undoes receivement of the receivable account" do
       expect(subject.id).to eq(1215631)
       expect(subject.status).to eq(1)
-      expect(subject.status_name).to eq('unpaid')
+      expect(subject.status_name).to eq("unpaid")
       expect(subject.amount).to eq(150.99)
       expect(subject.total_amount).to be_nil
       expect(subject.ticket_amount).to be_nil
@@ -232,7 +232,7 @@ describe Myfinance::Resources::PayableAccount do
   end
 
   describe "#create_as_recurrent", vcr: true do
-    let(:params) { { due_date: '2015-10-20', amount: 150.99, create_as_recurrent: "monthly" } }
+    let(:params) { { due_date: "2015-10-20", amount: 150.99, create_as_recurrent: "monthly" } }
     subject { client.payable_accounts.create_as_recurrent(entity_id, params) }
 
     context "with success" do
@@ -241,7 +241,7 @@ describe Myfinance::Resources::PayableAccount do
         expect(subject.due_date).to eq(Date.new(2015, 10, 20))
         expect(subject.entity_id).to eq(entity_id)
         expect(subject.status).to eq(1)
-        expect(subject.status_name).to eq('unpaid')
+        expect(subject.status_name).to eq("unpaid")
         expect(subject.occurred_at).to be_nil
         expect(subject.amount).to eq(150.99)
         expect(subject.ticket_amount).to be_nil
@@ -270,17 +270,37 @@ describe Myfinance::Resources::PayableAccount do
         expect(subject.competency_month).to eq("2015-10")
         expect(subject.financial_account_taxes_attributes).to be_empty
         expect(subject.links).to eq([
-         {"rel" => "self","href" => "https://sandbox.myfinance.com.br/entities/3798/payable_accounts/1298854","method" => "get"},
-         {"rel" => "destroy","href" => "https://sandbox.myfinance.com.br/entities/3798/payable_accounts/1298854","method" => "delete"},
-         {"rel" => "pay","href" => "https://sandbox.myfinance.com.br/entities/3798/payable_accounts/1298854/pay","method" => "put"},
-         {"rel" => "next","href" => "https://sandbox.myfinance.com.br/entities/3798/payable_accounts/1298855","method" => "get"},
-         {"rel" => "destroy_recurrence","href" => "https://sandbox.myfinance.com.br/entities/3798/payable_accounts/1298854/recurrence","method" => "delete"}
+         {
+           "rel" => "self",
+           "href" => "https://sandbox.myfinance.com.br/entities/3798/payable_accounts/1298854",
+           "method" => "get"
+         },
+         {
+           "rel" => "destroy",
+           "href" => "https://sandbox.myfinance.com.br/entities/3798/payable_accounts/1298854",
+           "method" => "delete"
+         },
+         {
+           "rel" => "pay",
+           "href" => "https://sandbox.myfinance.com.br/entities/3798/payable_accounts/1298854/pay",
+           "method" => "put"
+         },
+         {
+           "rel" => "next",
+           "href" => "https://sandbox.myfinance.com.br/entities/3798/payable_accounts/1298855",
+           "method" => "get"
+         },
+         {
+           "rel" => "destroy_recurrence",
+           "href" => "https://sandbox.myfinance.com.br/entities/3798/payable_accounts/1298854/recurrence",
+           "method" => "delete"
+         }
         ])
       end
     end
 
     context "when any data is invalid" do
-      let(:params) { { due_date: '2015-10-20', amount: 150.99, create_as_recurrent: "october" } }
+      let(:params) { { due_date: "2015-10-20", amount: 150.99, create_as_recurrent: "october" } }
 
       it "raises Myfinance::RequestError" do
         expect { subject }.to raise_error(Myfinance::RequestError)
@@ -307,7 +327,7 @@ describe Myfinance::Resources::PayableAccount do
   end
 
   describe "#create_as_parcelled", vcr: true do
-    let(:params) { { due_date: '2015-10-20', amount: 150.99, create_as_recurrent: "monthly", number_of_parcels: 7 } }
+    let(:params) { { due_date: "2015-10-20", amount: 150.99, create_as_recurrent: "monthly", number_of_parcels: 7 } }
     subject { client.payable_accounts.create_as_parcelled(entity_id, params) }
 
     context "with success" do
@@ -316,7 +336,7 @@ describe Myfinance::Resources::PayableAccount do
         expect(subject.due_date).to eq(Date.new(2015, 10, 20))
         expect(subject.entity_id).to eq(entity_id)
         expect(subject.status).to eq(1)
-        expect(subject.status_name).to eq('unpaid')
+        expect(subject.status_name).to eq("unpaid")
         expect(subject.occurred_at).to be_nil
         expect(subject.amount).to eq(150.99)
         expect(subject.ticket_amount).to be_nil
@@ -345,17 +365,37 @@ describe Myfinance::Resources::PayableAccount do
         expect(subject.competency_month).to eq("2015-10")
         expect(subject.financial_account_taxes_attributes).to be_empty
         expect(subject.links).to eq([
-          {"rel" => "self","href" => "https://sandbox.myfinance.com.br/entities/3798/payable_accounts/1298978","method" => "get"},
-          {"rel" => "destroy","href" => "https://sandbox.myfinance.com.br/entities/3798/payable_accounts/1298978","method" => "delete"},
-          {"rel" => "pay","href" => "https://sandbox.myfinance.com.br/entities/3798/payable_accounts/1298978/pay","method" => "put"},
-          {"rel" => "next","href" => "https://sandbox.myfinance.com.br/entities/3798/payable_accounts/1298979","method" => "get"},
-          {"rel" => "destroy_recurrence","href" => "https://sandbox.myfinance.com.br/entities/3798/payable_accounts/1298978/recurrence","method" => "delete"}
+          {
+            "rel" => "self",
+            "href" => "https://sandbox.myfinance.com.br/entities/3798/payable_accounts/1298978",
+            "method" => "get"
+          },
+          {
+            "rel" => "destroy",
+            "href" => "https://sandbox.myfinance.com.br/entities/3798/payable_accounts/1298978",
+            "method" => "delete"
+          },
+          {
+            "rel" => "pay",
+            "href" => "https://sandbox.myfinance.com.br/entities/3798/payable_accounts/1298978/pay",
+            "method" => "put"
+          },
+          {
+            "rel" => "next",
+            "href" => "https://sandbox.myfinance.com.br/entities/3798/payable_accounts/1298979",
+            "method" => "get"
+          },
+          {
+            "rel" => "destroy_recurrence",
+            "href" => "https://sandbox.myfinance.com.br/entities/3798/payable_accounts/1298978/recurrence",
+            "method" => "delete"
+          }
         ])
       end
     end
 
     context "when any data is invalid" do
-      let(:params) { { due_date: '2015-10-20', amount: 150.99, create_as_recurrent: "october" } }
+      let(:params) { { due_date: "2015-10-20", amount: 150.99, create_as_recurrent: "october", number_of_parcels: 7 } }
 
       it "raises Myfinance::RequestError" do
         expect { subject }.to raise_error(Myfinance::RequestError)
@@ -376,6 +416,24 @@ describe Myfinance::Resources::PayableAccount do
 
       it "adds information on request error object" do
         expect(Myfinance::RequestError).to receive(:new).with(code: 403, message: "Forbidden", body: {"error" => "Você não tem permissão para acessar este recurso." }).and_call_original
+        expect { subject }.to raise_error(Myfinance::RequestError)
+      end
+    end
+  end
+
+  describe "#destroy_as_recurrent", vcr: true do
+    subject { client.payable_accounts.destroy_as_recurrent(1298918, entity_id) }
+
+    context "when payable account exists" do
+      it "returns true" do
+        expect(subject).to be_truthy
+      end
+    end
+
+    context "when payable account does not exist" do
+      subject { client.payable_accounts.destroy_as_recurrent(1215631099, entity_id) }
+
+      it "raises request error" do
         expect { subject }.to raise_error(Myfinance::RequestError)
       end
     end

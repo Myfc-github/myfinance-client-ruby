@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: https://sandbox.myfinance.com.br/entities/3798/receivable_accounts/1215631099/recurrence
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Myfinance Ruby Client v0.3.3
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic YjU1MmRkNWE4NTk4Y2EwODliOTFjNWUzNTVhODNiODZlNDY5NmFlZmFjOWVhYTA1Olg=
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 20 Oct 2015 20:10:41 GMT
+      Server:
+      - nginx/1.8.0
+      Set-Cookie:
+      - _financecompany_session=BAh7BkkiD3Nlc3Npb25faWQGOgZFVEkiJTYyOGQ0MzVjODQ4NzU4NjA3MWM4YzVmM2RiNTI3NTcyBjsAVA%3D%3D--b01cf3d6a3036db262ed39f0758b38b55cc79c1d;
+        path=/; HttpOnly
+      Vary:
+      - Accept-Encoding
+      X-Rack-Cache:
+      - invalidate, pass
+      X-Request-Id:
+      - 66c4bf24ef2fd6d19a885637e301a99c
+      X-Runtime:
+      - '0.082605'
+      X-UA-Compatible:
+      - IE=Edge,chrome=1
+      Content-Length:
+      - '122'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJlcnJvciI6Ik7Do28gZm9pIHBvc3PDrXZlbCBsb2NhbGl6YXIgYSB7Om9u
+        ZT0+XCJDb250YSBhIFJlY2ViZXJcIiwgOm90aGVyPT5cIkNvbnRhcyBhIFJl
+        Y2ViZXJcIn0gY29tIG8gSUQgMTIxNTYzMTA5OSJ9
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.myfinance.com.br/entities/3798/receivable_accounts/1215631099/recurrence
+  recorded_at: Tue, 20 Oct 2015 20:10:41 GMT
+recorded_with: VCR 2.9.3
