@@ -438,4 +438,23 @@ describe Myfinance::Resources::ReceivableAccount do
       end
     end
   end
+
+  describe "#destroy_many", vcr: true do
+    let(:params) { { selected_ids: [ 1235047, 1235048, 1235049 ] } }
+    subject { client.receivable_accounts.destroy_many(entity_id, params) }
+
+    context "when receivable account exists" do
+      it "returns true" do
+        expect(subject).to be_truthy
+      end
+    end
+
+    context "when receivable account does not exist" do
+      subject { client.receivable_accounts.destroy_many(1215631099, params) }
+
+      it "raises request error" do
+        expect { subject }.to raise_error(Myfinance::RequestError)
+      end
+    end
+  end
 end

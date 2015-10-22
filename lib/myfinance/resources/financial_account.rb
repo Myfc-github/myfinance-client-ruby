@@ -130,6 +130,22 @@ module Myfinance
         end
       end
 
+      #
+      # Destroy many payable/receivable accounts
+      #
+      # [API]
+      #   Method: <tt>DELETE /entities/:entity_id/payable_accounts</tt>
+      #   Method: <tt>DELETE /entities/:entity_id/receivable_accounts</tt>
+      #
+      #   Documentation: https://app.myfinance.com.br/docs/api/payable_accounts#delete_destroy_many
+      #   Documentation: https://app.myfinance.com.br/docs/api/receivable_accounts#delete_destroy_many
+      #
+      def destroy_many(entity_id, params)
+        http.delete(endpoint_for(nil, entity_id, __method__), body: params) do |response|
+          true
+        end
+      end
+
       private
 
       def request_and_build_response(method, endpoint, params={})
@@ -151,7 +167,8 @@ module Myfinance
           destroy: "/entities/:entity_id/#{resource_key}s/:id",
           create_as_recurrent: "/entities/:entity_id/#{resource_key}s",
           create_as_parcelled: "/entities/:entity_id/#{resource_key}s",
-          destroy_as_recurrent: "/entities/:entity_id/#{resource_key}s/:id/recurrence"
+          destroy_as_recurrent: "/entities/:entity_id/#{resource_key}s/:id/recurrence",
+          destroy_many: "/entities/:entity_id/#{resource_key}s",
         }
       end
 

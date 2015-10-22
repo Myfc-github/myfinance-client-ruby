@@ -72,7 +72,7 @@ describe Myfinance::Resources::PayableAccount do
     end
   end
 
-   describe "#create", vcr: true do
+  describe "#create", vcr: true do
     let(:params) { { due_date: "2015-08-15", amount: 150.99 } }
     subject { client.payable_accounts.create(entity_id, params) }
 
@@ -432,6 +432,25 @@ describe Myfinance::Resources::PayableAccount do
 
     context "when payable account does not exist" do
       subject { client.payable_accounts.destroy_as_recurrent(1215631099, entity_id) }
+
+      it "raises request error" do
+        expect { subject }.to raise_error(Myfinance::RequestError)
+      end
+    end
+  end
+
+  describe "#destroy_many", vcr: true do
+    let(:params) { { selected_ids: [ 1298982, 1298983, 1298984 ] } }
+    subject { client.payable_accounts.destroy_many(entity_id, params) }
+
+    context "when payable account exists" do
+      it "returns true" do
+        expect(subject).to be_truthy
+      end
+    end
+
+    context "when payable account does not exist" do
+      subject { client.payable_accounts.destroy_many(1215631099, params) }
 
       it "raises request error" do
         expect { subject }.to raise_error(Myfinance::RequestError)
