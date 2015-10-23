@@ -364,33 +364,35 @@ describe Myfinance::Resources::PayableAccount do
         expect(subject.current_parcel).to eq(1)
         expect(subject.competency_month).to eq("2015-10")
         expect(subject.financial_account_taxes_attributes).to be_empty
-        expect(subject.links).to eq([
-          {
-            "rel" => "self",
-            "href" => "https://sandbox.myfinance.com.br/entities/3798/payable_accounts/1298978",
-            "method" => "get"
-          },
-          {
-            "rel" => "destroy",
-            "href" => "https://sandbox.myfinance.com.br/entities/3798/payable_accounts/1298978",
-            "method" => "delete"
-          },
-          {
-            "rel" => "pay",
-            "href" => "https://sandbox.myfinance.com.br/entities/3798/payable_accounts/1298978/pay",
-            "method" => "put"
-          },
-          {
-            "rel" => "next",
-            "href" => "https://sandbox.myfinance.com.br/entities/3798/payable_accounts/1298979",
-            "method" => "get"
-          },
-          {
-            "rel" => "destroy_recurrence",
-            "href" => "https://sandbox.myfinance.com.br/entities/3798/payable_accounts/1298978/recurrence",
-            "method" => "delete"
-          }
-        ])
+        expect(subject.links).to eq(
+          [
+            {
+              "rel" => "self",
+              "href" => "https://sandbox.myfinance.com.br/entities/3798/payable_accounts/1298978",
+              "method" => "get"
+            },
+            {
+              "rel" => "destroy",
+              "href" => "https://sandbox.myfinance.com.br/entities/3798/payable_accounts/1298978",
+              "method" => "delete"
+            },
+            {
+              "rel" => "pay",
+              "href" => "https://sandbox.myfinance.com.br/entities/3798/payable_accounts/1298978/pay",
+              "method" => "put"
+            },
+            {
+              "rel" => "next",
+              "href" => "https://sandbox.myfinance.com.br/entities/3798/payable_accounts/1298979",
+              "method" => "get"
+            },
+            {
+              "rel" => "destroy_recurrence",
+              "href" => "https://sandbox.myfinance.com.br/entities/3798/payable_accounts/1298978/recurrence",
+              "method" => "delete"
+            }
+          ]
+        )
       end
     end
 
@@ -402,7 +404,7 @@ describe Myfinance::Resources::PayableAccount do
       end
 
       it "adds information on request error object" do
-        expect(Myfinance::RequestError).to receive(:new).with(code: 422, message: "Unprocessable Entity", body: { "create_as_recurrent"=>["não está incluso na lista"] }).and_call_original
+        expect(Myfinance::RequestError).to receive(:new).with(code: 422, message: "Unprocessable Entity", body: { "create_as_recurrent" => ["não está incluso na lista"] }).and_call_original
         expect { subject }.to raise_error(Myfinance::RequestError)
       end
     end
@@ -415,7 +417,7 @@ describe Myfinance::Resources::PayableAccount do
       end
 
       it "adds information on request error object" do
-        expect(Myfinance::RequestError).to receive(:new).with(code: 403, message: "Forbidden", body: {"error" => "Você não tem permissão para acessar este recurso." }).and_call_original
+        expect(Myfinance::RequestError).to receive(:new).with(code: 403, message: "Forbidden", body: { "error" => "Você não tem permissão para acessar este recurso." }).and_call_original
         expect { subject }.to raise_error(Myfinance::RequestError)
       end
     end
@@ -440,7 +442,7 @@ describe Myfinance::Resources::PayableAccount do
   end
 
   describe "#destroy_many", vcr: true do
-    let(:params) { { selected_ids: [ 1298982, 1298983, 1298984 ] } }
+    let(:params) { { selected_ids: [1298982, 1298983, 1298984] } }
     subject { client.payable_accounts.destroy_many(entity_id, params) }
 
     context "when payable account exists" do

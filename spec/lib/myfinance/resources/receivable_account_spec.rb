@@ -364,33 +364,35 @@ describe Myfinance::Resources::ReceivableAccount do
         expect(subject.current_parcel).to eq(1)
         expect(subject.competency_month).to eq("2015-10")
         expect(subject.financial_account_taxes_attributes).to be_empty
-        expect(subject.links).to eq([
-          {
-            "rel" => "self",
-            "href" => "https://sandbox.myfinance.com.br/entities/3798/receivable_accounts/1298985",
-            "method" => "get"
-          },
-          {
-            "rel" => "destroy",
-            "href" => "https://sandbox.myfinance.com.br/entities/3798/receivable_accounts/1298985",
-            "method" => "delete"
-          },
-          {
-            "rel" => "receive",
-            "href" => "https://sandbox.myfinance.com.br/entities/3798/receivable_accounts/1298985/receive",
-            "method" => "put"
-          },
-          {
-            "rel" => "next",
-            "href" => "https://sandbox.myfinance.com.br/entities/3798/receivable_accounts/1298986",
-            "method" => "get"
-          },
-          {
-            "rel" => "destroy_recurrence",
-            "href" => "https://sandbox.myfinance.com.br/entities/3798/receivable_accounts/1298985/recurrence",
-            "method" => "delete"
-          }
-        ])
+        expect(subject.links).to eq(
+          [
+            {
+              "rel" => "self",
+              "href" => "https://sandbox.myfinance.com.br/entities/3798/receivable_accounts/1298985",
+              "method" => "get"
+            },
+            {
+              "rel" => "destroy",
+              "href" => "https://sandbox.myfinance.com.br/entities/3798/receivable_accounts/1298985",
+              "method" => "delete"
+            },
+            {
+              "rel" => "receive",
+              "href" => "https://sandbox.myfinance.com.br/entities/3798/receivable_accounts/1298985/receive",
+              "method" => "put"
+            },
+            {
+              "rel" => "next",
+              "href" => "https://sandbox.myfinance.com.br/entities/3798/receivable_accounts/1298986",
+              "method" => "get"
+            },
+            {
+              "rel" => "destroy_recurrence",
+              "href" => "https://sandbox.myfinance.com.br/entities/3798/receivable_accounts/1298985/recurrence",
+              "method" => "delete"
+            }
+          ]
+        )
       end
     end
 
@@ -402,7 +404,7 @@ describe Myfinance::Resources::ReceivableAccount do
       end
 
       it "adds information on request error object" do
-        expect(Myfinance::RequestError).to receive(:new).with(code: 422, message: "Unprocessable Entity", body: { "create_as_recurrent"=>["não está incluso na lista"] }).and_call_original
+        expect(Myfinance::RequestError).to receive(:new).with(code: 422, message: "Unprocessable Entity", body: { "create_as_recurrent" => ["não está incluso na lista"] }).and_call_original
         expect { subject }.to raise_error(Myfinance::RequestError)
       end
     end
@@ -415,7 +417,7 @@ describe Myfinance::Resources::ReceivableAccount do
       end
 
       it "adds information on request error object" do
-        expect(Myfinance::RequestError).to receive(:new).with(code: 403, message: "Forbidden", body: {"error" => "Você não tem permissão para acessar este recurso." }).and_call_original
+        expect(Myfinance::RequestError).to receive(:new).with(code: 403, message: "Forbidden", body: { "error" => "Você não tem permissão para acessar este recurso." }).and_call_original
         expect { subject }.to raise_error(Myfinance::RequestError)
       end
     end
@@ -440,7 +442,7 @@ describe Myfinance::Resources::ReceivableAccount do
   end
 
   describe "#destroy_many", vcr: true do
-    let(:params) { { selected_ids: [ 1235047, 1235048, 1235049 ] } }
+    let(:params) { { selected_ids: [1235047, 1235048, 1235049] } }
     subject { client.receivable_accounts.destroy_many(entity_id, params) }
 
     context "when receivable account exists" do
