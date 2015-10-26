@@ -27,5 +27,9 @@ module Myfinance
     def receivable_accounts
       Myfinance::Resources::ReceivableAccount.new(http)
     end
+
+    def deposit_accounts
+      Myfinance::Resources::DepositAccount.new(http)
+    end
   end
 end

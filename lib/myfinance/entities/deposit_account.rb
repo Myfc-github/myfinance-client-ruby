@@ -1,6 +1,6 @@
 module Myfinance
   module Entities
-    class FinancialAccount < Base
+    class DepositAccount < Base
       [:logo_image_url, :name].each { |k| attribute k, String }
 
       [:archive, :force_destroy, :imported_from_sync].each { |k| attribute k, Boolean }

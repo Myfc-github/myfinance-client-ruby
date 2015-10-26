@@ -1,4 +1,4 @@
-module Myfinance
+module Myfinance
   module Entities
     #
     # A wrapper to Myfinance entities collection

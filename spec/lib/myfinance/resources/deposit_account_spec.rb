@@ -17,7 +17,7 @@ describe Myfinance::Resources::DepositAccount do
 
     context "when not found" do
       let(:client) { Myfinance.client("") }
-      subject { client.deposit_accounts .find_all(entity_id) }
+      subject { client.deposit_accounts.find_all(entity_id) }
 
       it "raises NotFound" do
         expect { subject }.to raise_error(Myfinance::RequestError)
