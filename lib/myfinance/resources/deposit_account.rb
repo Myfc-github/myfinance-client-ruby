@@ -14,6 +14,20 @@ module Myfinance
           respond_with_collection(response)
         end
       end
+
+      #
+      # Find a specific deposit_account
+      #
+      # [API]
+      #   Method: <tt>GET /entities/:entity_id/deposit_accounts/:id</tt>
+      #
+      #   Documentation: https://app.myfinance.com.br/docs/api/deposit_accounts#get_show
+      #
+      def find(entity_id, id)
+        http.get("/entities/#{entity_id}/deposit_accounts/#{id}", body: {}) do |response|
+          respond_with_object(response, 'deposit_account')
+        end
+      end
     end
   end
 end

@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.myfinance.com.br/entities/3798/deposit_accounts/14268
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - Myfinance Ruby Client v0.3.3
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic YjU1MmRkNWE4NTk4Y2EwODliOTFjNWUzNTVhODNiODZlNDY5NmFlZmFjOWVhYTA1Olg=
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 26 Oct 2015 19:31:14 GMT
+      ETag:
+      - W/"6f7bd35e2f5a56814bb91a610f586266"
+      Server:
+      - nginx/1.8.0
+      Vary:
+      - Accept-Encoding
+      X-Rack-Cache:
+      - miss
+      X-Request-Id:
+      - 16809f1dbcf5319f54e52150671a4375
+      X-Runtime:
+      - '0.062002'
+      X-UA-Compatible:
+      - IE=Edge,chrome=1
+      Content-Length:
+      - '308'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"deposit_account":{"id":14268,"archived_at":null,"bank_account_id":null,"currency_id":1,"deposit_account_type_id":2,"description":null,"entity_id":3798,"force_destroy":false,"imported_from_sync":false,"initial_balance":null,"last_transaction_date":null,"name":"Carteira","sync_response":{},"calculated_balance":"0.0","logo_image_url":"logos/logo-money-account.png","links":[{"rel":"self","href":"https://sandbox.myfinance.com.br/entities/3798/deposit_accounts/14268","method":"get"}]}}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.myfinance.com.br/entities/3798/deposit_accounts/14268
+  recorded_at: Mon, 26 Oct 2015 19:31:14 GMT
+recorded_with: VCR 2.9.3

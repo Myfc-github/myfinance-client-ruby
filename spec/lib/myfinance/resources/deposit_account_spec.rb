@@ -24,4 +24,47 @@ describe Myfinance::Resources::DepositAccount do
       end
     end
   end
+
+  describe "#find", vcr: true do
+    context "when success" do
+      subject { client.deposit_accounts.find(entity_id, 14268) }
+
+      it "returns a find_all of orders" do
+        expect(subject.class).to eq(Myfinance::Entities::DepositAccount)
+        expect(subject.entity_id).to eq(3798)
+        expect(subject.id).to eq(14268)
+        expect(subject.archived_at).to be_nil
+        expect(subject.bank_account_id).to be_nil
+        expect(subject.description).to be_nil
+        expect(subject.initial_balance).to be_nil
+        expect(subject.last_transaction_date).to be_nil
+        expect(subject.currency_id).to eq(1)
+        expect(subject.deposit_account_type_id).to eq(2)
+        expect(subject.force_destroy).to be_falsy
+        expect(subject.imported_from_sync).to be_falsy
+        expect(subject.name).to eq("Carteira")
+        expect(subject.sync_response).to eq({})
+        expect(subject.calculated_balance).to eq(0.0)
+        expect(subject.logo_image_url).to eq("logos/logo-money-account.png")
+        expect(subject.links).to eq(
+          [
+            {
+              "rel" => "self",
+              "href" => "https://sandbox.myfinance.com.br/entities/3798/deposit_accounts/14268",
+              "method" => "get"
+            }
+          ]
+        )
+      end
+    end
+
+    context "when not found" do
+      let(:client) { Myfinance.client("") }
+      subject { client.deposit_accounts.find(entity_id, 14268) }
+
+      it "raises NotFound" do
+        expect { subject }.to raise_error(Myfinance::RequestError)
+      end
+    end
+  end
 end
