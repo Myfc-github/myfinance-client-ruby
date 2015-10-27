@@ -42,6 +42,34 @@ module Myfinance
           respond_with_object(response, 'deposit_account')
         end
       end
+
+      #
+      # Update a specific deposit_account
+      #
+      # [API]
+      #   Method: <tt>PUT /entities/:entity_id/deposit_accounts/:id</tt>
+      #
+      #   Documentation: https://app.myfinance.com.br/docs/api/deposit_accounts#put_update
+      #
+      def update(entity_id, id, params)
+        http.put("/entities/#{entity_id}/deposit_accounts/#{id}", body: params) do |response|
+          respond_with_object(response, 'deposit_account')
+        end
+      end
+
+      #
+      # Delete a specific deposit_account
+      #
+      # [API]
+      #   Method: <tt>DELETE /entities/:entity_id/deposit_accounts/:id</tt>
+      #
+      #   Documentation: https://app.myfinance.com.br/docs/api/deposit_accounts#delete_destroy
+      #
+      def destroy(entity_id, id)
+        http.delete("/entities/#{entity_id}/deposit_accounts/#{id}", body: {}) do |response|
+          response.code
+        end
+      end
     end
   end
 end

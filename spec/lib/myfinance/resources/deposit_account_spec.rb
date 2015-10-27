@@ -113,4 +113,50 @@ describe Myfinance::Resources::DepositAccount do
       end
     end
   end
+
+  describe "#update", vcr: true do
+    let(:params) do
+      {
+        deposit_account: {
+          name: "Caixa"
+        }
+      }
+    end
+
+    context "when success" do
+      subject { client.deposit_accounts.update(entity_id, 14447, params) }
+
+      it "returns a updated entity" do
+        expect(subject.class).to eq(Myfinance::Entities::DepositAccount)
+      end
+    end
+
+    context "when not found" do
+      let(:client) { Myfinance.client("") }
+      subject { client.deposit_accounts.update(entity_id, 14447, params) }
+
+      it "raises NotFound" do
+        expect { subject }.to raise_error(Myfinance::RequestError)
+      end
+    end
+  end
+
+  describe "#destroy", vcr: true do
+    context "when success" do
+      subject { client.deposit_accounts.destroy(entity_id, 14447) }
+
+      it "returns a empty body with code 200" do
+        expect(subject).to eq(200)
+      end
+    end
+
+    context "when not found" do
+      let(:client) { Myfinance.client("") }
+      subject { client.deposit_accounts.destroy(entity_id, 14447) }
+
+      it "raises NotFound" do
+        expect { subject }.to raise_error(Myfinance::RequestError)
+      end
+    end
+  end
 end
