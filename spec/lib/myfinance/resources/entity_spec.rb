@@ -122,7 +122,7 @@ describe Myfinance::Resources::Entity do
       subject { client.entities.create(params) }
 
       it "raises NotFound" do
-        expect{  subject }.to raise_error(Myfinance::RequestError)
+        expect{ subject }.to raise_error(Myfinance::RequestError)
       end
     end
   end

@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox.myfinance.com.br/entities/3798/deposit_accounts
+    body:
+      encoding: UTF-8
+      string: '{"deposit_account":{"name":"Caixa Pequeno","currency_id":1,"deposit_account_type_id":2,"entity_id":3798}}'
+    headers:
+      User-Agent:
+      - Myfinance Ruby Client v0.3.3
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic YjU1MmRkNWE4NTk4Y2EwODliOTFjNWUzNTVhODNiODZlNDY5NmFlZmFjOWVhYTA1Olg=
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 27 Oct 2015 12:59:54 GMT
+      ETag:
+      - '"f0c7ab367b1d9f363236173cc158ae5f"'
+      Location:
+      - https://sandbox.myfinance.com.br/entities/3798/deposit_accounts/14447
+      Server:
+      - nginx/1.8.0
+      Set-Cookie:
+      - _financecompany_session=BAh7BkkiD3Nlc3Npb25faWQGOgZFVEkiJWQxNGEyNzUyZTU4ZjdiZjMxMWM1ZTc1OGQ0ZDk2NWEzBjsAVA%3D%3D--51f113dc55eb20a33ddb38869a9748cd38e6c883;
+        path=/; HttpOnly
+      X-Rack-Cache:
+      - invalidate, pass
+      X-Request-Id:
+      - 4f2d81d418e1a600341112b382041b6c
+      X-Runtime:
+      - '0.078989'
+      X-UA-Compatible:
+      - IE=Edge,chrome=1
+      Content-Length:
+      - '406'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"deposit_account":{"archived_at":null,"bank_account_id":null,"created_at":"2015-10-27T10:59:54-02:00","currency_id":1,"deposit_account_type_id":2,"description":null,"entity_id":3798,"force_destroy":false,"id":14447,"imported_from_sync":false,"initial_balance":null,"last_transaction_date":null,"name":"Caixa
+        Pequeno","sync_response":{},"updated_at":"2015-10-27T10:59:54-02:00","calculated_balance":"0.0"}}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.myfinance.com.br/entities/3798/deposit_accounts
+  recorded_at: Tue, 27 Oct 2015 12:59:54 GMT
+recorded_with: VCR 2.9.3

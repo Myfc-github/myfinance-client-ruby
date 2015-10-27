@@ -28,6 +28,20 @@ module Myfinance
           respond_with_object(response, 'deposit_account')
         end
       end
+
+      #
+      # Create a specific deposit_account
+      #
+      # [API]
+      #   Method: <tt>POST /entities/:entity_id/deposit_accounts</tt>
+      #
+      #   Documentation: https://app.myfinance.com.br/docs/api/deposit_accounts#post_create
+      #
+      def create(entity_id, params)
+        http.post("/entities/#{entity_id}/deposit_accounts", body: params) do |response|
+          respond_with_object(response, 'deposit_account')
+        end
+      end
     end
   end
 end
