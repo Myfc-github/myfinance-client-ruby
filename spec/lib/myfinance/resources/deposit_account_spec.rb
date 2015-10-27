@@ -29,7 +29,7 @@ describe Myfinance::Resources::DepositAccount do
     context "when success" do
       subject { client.deposit_accounts.find(entity_id, 14268) }
 
-      it "returns a find_all of orders" do
+      it "returns a find_all of deposit_accounts" do
         expect(subject.class).to eq(Myfinance::Entities::DepositAccount)
         expect(subject.entity_id).to eq(3798)
         expect(subject.id).to eq(14268)
@@ -83,7 +83,7 @@ describe Myfinance::Resources::DepositAccount do
     context "when success" do
       subject { client.deposit_accounts.create(entity_id, params) }
 
-      it "returns a created entity" do
+      it "returns a created deposit_account" do
         expect(subject.class).to eq(Myfinance::Entities::DepositAccount)
         expect(subject.id).to eq(14447)
         expect(subject.currency_id).to eq(1)
@@ -126,7 +126,7 @@ describe Myfinance::Resources::DepositAccount do
     context "when success" do
       subject { client.deposit_accounts.update(entity_id, 14447, params) }
 
-      it "returns a updated entity" do
+      it "returns a updated deposit_account" do
         expect(subject.class).to eq(Myfinance::Entities::DepositAccount)
       end
     end

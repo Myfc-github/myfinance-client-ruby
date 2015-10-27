@@ -16,8 +16,16 @@ module Myfinance
       false
     end
 
+    def deposit_accounts
+      Myfinance::Resources::DepositAccount.new(http)
+    end
+
     def entities
       Myfinance::Resources::Entity.new(http)
+    end
+
+    def financial_transactions
+      Myfinance::Resources::FinancialTransaction.new(http)
     end
 
     def payable_accounts
@@ -26,10 +34,6 @@ module Myfinance
 
     def receivable_accounts
       Myfinance::Resources::ReceivableAccount.new(http)
-    end
-
-    def deposit_accounts
-      Myfinance::Resources::DepositAccount.new(http)
     end
   end
 end
