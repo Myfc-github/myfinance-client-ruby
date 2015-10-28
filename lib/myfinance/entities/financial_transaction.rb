@@ -16,8 +16,8 @@ module Myfinance
 
       attribute :occurred_at, Date
       attribute :attachment_id_list, Array
-
-      [:reconciliations, :links].each { |k| attribute k, Array[Hash[String => String]] }
+      attribute :reconciliations, Hash[String => Array]
+      attribute :links, Array[Hash[String => String]]
     end
   end
 end
