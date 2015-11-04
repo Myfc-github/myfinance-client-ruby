@@ -1,0 +1,70 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.myfinance.com.br/entities/3798/attachments
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - Myfinance Ruby Client v0.3.3
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic YjU1MmRkNWE4NTk4Y2EwODliOTFjNWUzNTVhODNiODZlNDY5NmFlZmFjOWVhYTA1Olg=
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 04 Nov 2015 18:09:02 GMT
+      ETag:
+      - W/"938ef79f6f9e74a4e7ed9688768b1870"
+      Server:
+      - nginx/1.8.0
+      Vary:
+      - Accept-Encoding
+      X-Rack-Cache:
+      - miss
+      X-Request-Id:
+      - 77477e9eb4afc9aa1d6c595e11d5bbda
+      X-Runtime:
+      - '0.028360'
+      X-UA-Compatible:
+      - IE=Edge,chrome=1
+      Content-Length:
+      - '298'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        W3siYXR0YWNobWVudCI6eyJpZCI6MTMwNCwiZW50aXR5X2lkIjozNzk4LCJ0
+        aXRsZSI6IkNhcHR1cmEiLCJhdHRhY2htZW50X2ZpbGVfbmFtZSI6IkNhcHR1
+        cmFfZGVfdGVsYV8yMDExLTA4LTEwX2HMgHNfMTMuMzIuMTcucG5nIiwiYXR0
+        YWNobWVudF9jb250ZW50X3R5cGUiOiJpbWFnZS9wbmciLCJhdHRhY2htZW50
+        X2ZpbGVfc2l6ZSI6MzI4OCwiY3JlYXRlZF9hdCI6IjIwMTUtMTEtMDRUMTY6
+        MDU6MTYtMDI6MDAiLCJ1cGRhdGVkX2F0IjoiMjAxNS0xMS0wNFQxNjowNTox
+        Ni0wMjowMCIsImRvd25sb2FkX3VybCI6Imh0dHBzOi8vc2FuZGJveC5teWZp
+        bmFuY2UuY29tLmJyL2VudGl0aWVzLzM3OTgvYXR0YWNobWVudHMvMTMwNC9k
+        b3dubG9hZCIsImF0dGFjaGFibGVzIjpbXSwibGlua3MiOlt7InJlbCI6InNl
+        bGYiLCJocmVmIjoiaHR0cHM6Ly9zYW5kYm94Lm15ZmluYW5jZS5jb20uYnIv
+        ZW50aXRpZXMvMzc5OC9hdHRhY2htZW50cy8xMzA0IiwibWV0aG9kIjoiZ2V0
+        In0seyJyZWwiOiJkb3dubG9hZCIsImhyZWYiOiJodHRwczovL3NhbmRib3gu
+        bXlmaW5hbmNlLmNvbS5ici9lbnRpdGllcy8zNzk4L2F0dGFjaG1lbnRzLzEz
+        MDQvZG93bmxvYWQiLCJtZXRob2QiOiJnZXQifV19fV0=
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.myfinance.com.br/entities/3798/attachments
+  recorded_at: Wed, 04 Nov 2015 18:09:02 GMT
+recorded_with: VCR 2.9.3

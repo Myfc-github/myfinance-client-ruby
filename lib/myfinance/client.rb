@@ -35,5 +35,9 @@ module Myfinance
     def receivable_accounts
       Myfinance::Resources::ReceivableAccount.new(http)
     end
+
+    def attachments
+      Myfinance::Resources::Attachment.new(http)
+    end
   end
 end
