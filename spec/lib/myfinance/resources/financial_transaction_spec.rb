@@ -27,7 +27,7 @@ describe Myfinance::Resources::FinancialTransaction do
     end
   end
 
-    describe "#find", vcr: true do
+  describe "#find", vcr: true do
     context "when success" do
       subject { client.financial_transactions.find(entity_id, deposit_account_id, financial_transaction_id) }
 
