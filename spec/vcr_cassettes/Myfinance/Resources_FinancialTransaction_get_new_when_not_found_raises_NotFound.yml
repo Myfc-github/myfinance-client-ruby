@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.myfinance.com.br/entities/3798/deposit_accounts/14268/financial_transactions/new
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - Myfinance Ruby Client v0.3.3
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic Olg=
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Cache-Control:
+      - no-cache, private
+      Content-Type:
+      - text/html; charset=utf-8
+      Date:
+      - Tue, 03 Nov 2015 13:19:34 GMT
+      Server:
+      - nginx/1.8.0
+      WWW-Authenticate:
+      - Basic realm="Myfinance API"
+      X-Rack-Cache:
+      - miss
+      X-Request-Id:
+      - 5a7faca652da766947ca635a177ee6b5
+      X-Runtime:
+      - '0.008729'
+      X-UA-Compatible:
+      - IE=Edge,chrome=1
+      Content-Length:
+      - '27'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |
+        HTTP Basic: Access denied.
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.myfinance.com.br/entities/3798/deposit_accounts/14268/financial_transactions/new
+  recorded_at: Tue, 03 Nov 2015 13:19:34 GMT
+recorded_with: VCR 2.9.3

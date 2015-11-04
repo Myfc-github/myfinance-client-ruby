@@ -10,6 +10,8 @@ describe Myfinance::Entities::FinancialTransaction do
     :id, :owner_id, :parent_id, :person_id, :transfer_deposit_account_id,
     :transfer_id, :document, :notes, :observation, :original_description,
     :user_description, :type, :guid, :created_at, :updated_at, :occurred_at,
-    :attachment_id_list, :reconciliations, :links
+    :attachment_id_list, :reconciliations, :links, :api_related, :bank_slips_count,
+    :duplicity_suspicion_id, :excel_import_id, :indexed_at, :attachments_count,
+    :divided
   ]
 end

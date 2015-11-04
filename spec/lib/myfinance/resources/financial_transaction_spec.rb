@@ -27,7 +27,7 @@ describe Myfinance::Resources::FinancialTransaction do
     end
   end
 
-  describe "#find", vcr: true do
+    describe "#find", vcr: true do
     context "when success" do
       subject { client.financial_transactions.find(entity_id, deposit_account_id, financial_transaction_id) }
 
@@ -72,6 +72,58 @@ describe Myfinance::Resources::FinancialTransaction do
     context "when not found" do
       let(:client) { Myfinance.client("") }
       subject { client.financial_transactions.find(entity_id, deposit_account_id, financial_transaction_id) }
+
+      it "raises NotFound" do
+        expect { subject }.to raise_error(Myfinance::RequestError)
+      end
+    end
+  end
+
+  describe "#get_new", vcr: true do
+    context "when success" do
+      subject { client.financial_transactions.get_new(entity_id, deposit_account_id) }
+
+      it "returns empty financial_transaction" do
+        expect(subject.class).to eq(Myfinance::Entities::FinancialTransaction)
+        expect(subject.absolute_amount).to be_nil
+        expect(subject.amount).to be_nil
+        expect(subject.api_related).to be_falsy
+        expect(subject.attachments_count).to eq(0)
+        expect(subject.balance_difference).to be_falsy
+        expect(subject.bank_slips_count).to eq(0)
+        expect(subject.bank_statement_id).to be_nil
+        expect(subject.category_id).to be_nil
+        expect(subject.classification_center_id).to be_nil
+        expect(subject.created_at).to be_nil
+        expect(subject.currency_id).to be_nil
+        expect(subject.deposit_account_id).to eq(14268)
+        expect(subject.divided).to be_falsy
+        expect(subject.document).to be_nil
+        expect(subject.duplicity_suspicion_id).to be_nil
+        expect(subject.excel_import_id).to be_nil
+        expect(subject.force_destroy).to be_falsy
+        expect(subject.id).to be_nil
+        expect(subject.imported_from_sync).to be_falsy
+        expect(subject.indexed_at).to be_nil
+        expect(subject.is_pending).to be_falsy
+        expect(subject.notes).to be_nil
+        expect(subject.observation).to be_nil
+        expect(subject.occurred_at).to eq(DateTime.parse("2015-11-03"))
+        expect(subject.original_description).to be_nil
+        expect(subject.owner_id).to be_nil
+        expect(subject.parent_id).to be_nil
+        expect(subject.person_id).to be_nil
+        expect(subject.reconciled).to be_falsy
+        expect(subject.transfer_id).to be_nil
+        expect(subject.updated_at).to be_nil
+        expect(subject.user_description).to be_nil
+        expect(subject.type).to eq("Debit")
+      end
+    end
+
+    context "when not found" do
+      let(:client) { Myfinance.client("") }
+      subject { client.financial_transactions.get_new(entity_id, deposit_account_id) }
 
       it "raises NotFound" do
         expect { subject }.to raise_error(Myfinance::RequestError)
@@ -202,4 +254,22 @@ describe Myfinance::Resources::FinancialTransaction do
     end
   end
 
+  describe "#destroy_many", vcr: true do
+    let(:params) { { selected_ids: [1504017] } }
+    subject { client.financial_transactions.destroy_many(entity_id, deposit_account_id, params) }
+
+    context "when financial_transaction exists" do
+      it "returns true" do
+        expect(subject).to be_truthy
+      end
+    end
+
+    context "when financial_transaction does not exist" do
+      subject { client.financial_transactions.destroy_many(1215631099, deposit_account_id, params) }
+
+      it "raises request error" do
+        expect { subject }.to raise_error(Myfinance::RequestError)
+      end
+    end
+  end
 end
