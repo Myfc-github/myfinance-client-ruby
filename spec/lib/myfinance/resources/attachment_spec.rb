@@ -67,4 +67,60 @@ describe Myfinance::Resources::Attachment do
       end
     end
   end
+
+  describe "#get_new", vcr: true do
+    context "when success" do
+      subject { client.attachments.get_new(entity_id) }
+
+      it "returns empty attachment" do
+        expect(subject.class).to eq(Myfinance::Entities::Attachment)
+        expect(subject.entity_id).to eq(3798)
+        expect(subject.title).to be_nil
+        expect(subject.attachment_file_name).to be_nil
+        expect(subject.attachment_content_type).to be_nil
+        expect(subject.attachment_file_size).to be_nil
+        expect(subject.created_at).to be_nil
+        expect(subject.updated_at).to be_nil
+      end
+    end
+
+    context "when not found" do
+      let(:client) { Myfinance.client("") }
+      subject { client.attachments.get_new(entity_id) }
+
+      it "raises NotFound" do
+        expect { subject }.to raise_error(Myfinance::RequestError)
+      end
+    end
+  end
+=begin
+  describe "#create", vcr: true do
+    let(:params) do
+      {
+        attachment: {
+          entity_id: entity_id,
+          user_id: ,
+          attachment:
+        }
+      }
+    end
+
+    context "when success" do
+      subject { client.attachments.create(entity_id, params) }
+
+      it "returns a created attachment" do
+        expect(subject.class).to eq(Myfinance::Entities::Attachment)
+      end
+    end
+
+    context "when not found" do
+      let(:client) { Myfinance.client("") }
+      subject { client.attachments.create(entity_id, params) }
+
+      it "raises NotFound" do
+        expect{ subject }.to raise_error(Myfinance::RequestError)
+      end
+    end
+  end
+=end
 end
