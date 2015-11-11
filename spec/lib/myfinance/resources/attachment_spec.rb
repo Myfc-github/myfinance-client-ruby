@@ -166,4 +166,74 @@ describe Myfinance::Resources::Attachment do
       end
     end
   end
+
+  describe "#update", vcr: true do
+    let(:params) do
+      {
+        attachment: {
+          title: "Capturar 2"
+        }
+      }
+    end
+
+    context "when success" do
+      subject { client.attachments.update(entity_id, 1306, params) }
+
+      it "returns a updated attachment" do
+        expect(subject.class).to eq(Myfinance::Entities::Attachment)
+        expect(subject.id).to eq(1306)
+        expect(subject.entity_id).to eq(3798)
+        expect(subject.title).to eq("Capturar 2")
+        expect(subject.attachment_file_name).to eq("Mensalidade_MyFinance_15-07-2015.oxps")
+        expect(subject.attachment_content_type).to eq("application/octet-stream")
+        expect(subject.attachment_file_size).to eq(135328)
+        expect(subject.created_at).to eq(DateTime.parse("2015-11-11T11:30:20-02:00"))
+        expect(subject.updated_at).to eq(DateTime.parse("2015-11-11T15:52:27-02:00"))
+        expect(subject.download_url).to eq("https://sandbox.myfinance.com.br/entities/3798/attachments/1306/download")
+        expect(subject.attachables).to eq([])
+        expect(subject.links).to eq(
+          [
+            {
+              "rel" => "self",
+              "href" => "https://sandbox.myfinance.com.br/entities/3798/attachments/1306",
+              "method" => "get"
+            },
+            {
+              "rel" => "download",
+              "href" => "https://sandbox.myfinance.com.br/entities/3798/attachments/1306/download",
+              "method" => "get"
+            }
+          ]
+        )
+      end
+    end
+
+    context "when not found" do
+      let(:client) { Myfinance.client("") }
+      subject { client.attachments.update(entity_id, 1306, params) }
+
+      it "raises NotFound" do
+        expect{ subject }.to raise_error(Myfinance::RequestError)
+      end
+    end
+  end
+
+  describe "#destroy", vcr: true do
+    context "when success" do
+      subject { client.attachments.destroy(entity_id, 1306) }
+
+      it "returns a empty body with code 200" do
+        expect(subject).to eq(200)
+      end
+    end
+
+    context "when not found" do
+      let(:client) { Myfinance.client("") }
+      subject { client.attachments.destroy(entity_id, 1306) }
+
+      it "raises NotFound" do
+        expect { subject }.to raise_error(Myfinance::RequestError)
+      end
+    end
+  end
 end

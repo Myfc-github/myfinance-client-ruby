@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: https://sandbox.myfinance.com.br/entities/3798/attachments/1306
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - Myfinance Ruby Client v0.3.3
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic YjU1MmRkNWE4NTk4Y2EwODliOTFjNWUzNTVhODNiODZlNDY5NmFlZmFjOWVhYTA1Olg=
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 11 Nov 2015 17:55:57 GMT
+      ETag:
+      - W/"7215ee9c7d9dc229d2921a40e899ec5f"
+      Server:
+      - nginx/1.8.0
+      Set-Cookie:
+      - _financecompany_session=BAh7BkkiD3Nlc3Npb25faWQGOgZFVEkiJWNmNTRmNTExYTdlNzQwMDI1Nzk1YzQ1OTI1NTQ1NjU4BjsAVA%3D%3D--280a21a9205db4519c23e424db5b48b76bf32d98;
+        path=/; HttpOnly
+      Vary:
+      - Accept-Encoding
+      X-Rack-Cache:
+      - invalidate, pass
+      X-Request-Id:
+      - c6008066ab767bd04fc1ce8211813273
+      X-Runtime:
+      - '0.336100'
+      X-UA-Compatible:
+      - IE=Edge,chrome=1
+      Content-Length:
+      - '21'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: " "
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.myfinance.com.br/entities/3798/attachments/1306
+  recorded_at: Wed, 11 Nov 2015 17:55:57 GMT
+recorded_with: VCR 2.9.3

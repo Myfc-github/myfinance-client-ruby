@@ -80,7 +80,7 @@ module Myfinance
       #   Documentation: https://app.myfinance.com.br/docs/api/attachments#put_update
       #
       def update(entity_id, id, params)
-        http.put("/entities/#{entity_id}/attachments/#{id}", body: params) do |response|
+        http.put("/entities/#{entity_id}/attachments/#{id}", { body: params, content_type: "multipart/form-data" }) do |response|
           respond_with_object(response, 'attachment')
         end
       end
