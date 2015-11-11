@@ -93,14 +93,14 @@ describe Myfinance::Resources::Attachment do
       end
     end
   end
-=begin
+
   describe "#create", vcr: true do
     let(:params) do
       {
         attachment: {
-          entity_id: entity_id,
-          user_id: ,
-          attachment:
+          entity_id: entity_id.to_s,
+          user_id: 3703.to_s,
+          attachment: File.open("spec/fixtures/Mensalidade_MyFinance_15-07-2015.oxps", "r")
         }
       }
     end
@@ -110,6 +110,30 @@ describe Myfinance::Resources::Attachment do
 
       it "returns a created attachment" do
         expect(subject.class).to eq(Myfinance::Entities::Attachment)
+        expect(subject.id).to eq(1306)
+        expect(subject.entity_id).to eq(3798)
+        expect(subject.title).to be_nil
+        expect(subject.attachment_file_name).to eq("Mensalidade_MyFinance_15-07-2015.oxps")
+        expect(subject.attachment_content_type).to eq("application/octet-stream")
+        expect(subject.attachment_file_size).to eq(135328)
+        expect(subject.created_at).to eq(DateTime.parse("2015-11-11T11:30:20-02:00"))
+        expect(subject.updated_at).to eq(DateTime.parse("2015-11-11T11:30:20-02:00"))
+        expect(subject.download_url).to eq("https://sandbox.myfinance.com.br/entities/3798/attachments/1306/download")
+        expect(subject.attachables).to eq([])
+        expect(subject.links).to eq(
+          [
+            {
+              "rel" => "self",
+              "href" => "https://sandbox.myfinance.com.br/entities/3798/attachments/1306",
+              "method" => "get"
+            },
+            {
+              "rel" => "download",
+              "href" => "https://sandbox.myfinance.com.br/entities/3798/attachments/1306/download",
+              "method" => "get"
+            }
+          ]
+        )
       end
     end
 
@@ -122,5 +146,4 @@ describe Myfinance::Resources::Attachment do
       end
     end
   end
-=end
 end

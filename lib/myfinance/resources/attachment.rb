@@ -52,7 +52,7 @@ module Myfinance
       #   Documentation: https://app.myfinance.com.br/docs/api/attachments#post_create
       #
       def create(entity_id, params)
-        http.post("/entities/#{entity_id}/attachments", body: params) do |response|
+        http.post("/entities/#{entity_id}/attachments", { body: params, content_type: "multipart/form-data" }) do |response|
           respond_with_object(response, 'attachment')
         end
       end
