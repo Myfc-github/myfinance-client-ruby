@@ -58,6 +58,20 @@ module Myfinance
       end
 
       #
+      # Find a specific download attachment
+      #
+      # [API]
+      #   Method: <tt>GET /entities/:entity_id/attachments/:id/download</tt>
+      #
+      #   Documentation: https://app.myfinance.com.br/docs/api/attachments#get_show
+      #
+      def download(entity_id, id)
+        http.get("/entities/#{entity_id}/attachments/#{id}/download", body: {}) do |response|
+          Myfinance::Entities::AttachmentDownload.new(response.parsed_body)
+        end
+      end
+
+      #
       # Update a specific attachment
       #
       # [API]

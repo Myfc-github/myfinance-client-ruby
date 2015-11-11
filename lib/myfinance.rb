@@ -8,6 +8,7 @@ require "myfinance/client"
 
 require "myfinance/entities/base"
 require "myfinance/entities/attachment"
+require "myfinance/entities/attachment_download"
 require "myfinance/entities/collection"
 require "myfinance/entities/deposit_account"
 require "myfinance/entities/entity"

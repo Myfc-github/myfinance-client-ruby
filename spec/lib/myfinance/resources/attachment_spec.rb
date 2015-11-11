@@ -146,4 +146,24 @@ describe Myfinance::Resources::Attachment do
       end
     end
   end
+
+  describe "#download", vcr: true do
+    context "when success" do
+      subject { client.attachments.download(entity_id, 1306) }
+
+      it "returns a find of attachment" do
+        expect(subject.class).to eq(Myfinance::Entities::AttachmentDownload)
+        expect(subject.redirect_to).to eq("https://myfinance-store-uploadsdev-1snmu4tc9opid.s3.amazonaws.com/attachments/1306/Mensalidade_MyFinance_15-07-2015.oxps?AWSAccessKeyId=AKIAIMNIZGIIVJCCAE5A&Signature=V%2B6K27FXRiX%2FpVbWBGmstZvP7Jc%3D&Expires=1447254974")
+      end
+    end
+
+    context "when not found" do
+      let(:client) { Myfinance.client("") }
+      subject { client.attachments.download(entity_id, 1306) }
+
+      it "raises NotFound" do
+        expect { subject }.to raise_error(Myfinance::RequestError)
+      end
+    end
+  end
 end

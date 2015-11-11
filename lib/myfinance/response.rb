@@ -7,7 +7,7 @@ module Myfinance
   class Response < SimpleDelegator
 
     def resolve!(&block)
-      if success?
+      if success? || moved!
         block_given? ? yield(self) : self
       elsif timed_out?
         timeout!
@@ -24,6 +24,10 @@ module Myfinance
     end
 
     private
+
+    def moved!
+      [302].include?(self.code)
+    end
 
     def timeout!
       raise RequestTimeout
