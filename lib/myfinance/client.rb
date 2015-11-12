@@ -28,6 +28,10 @@ module Myfinance
       Myfinance::Resources::DepositAccount.new(http)
     end
 
+    def categories
+      Myfinance::Resources::Category.new(http)
+    end
+
     def entities
       Myfinance::Resources::Entity.new(http)
     end
