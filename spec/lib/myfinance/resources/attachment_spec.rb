@@ -34,7 +34,6 @@ describe Myfinance::Resources::Attachment do
         expect(subject.id).to eq(1304)
         expect(subject.attachables).to eq([])
         expect(subject.attachment_content_type).to eq("image/png")
-        # expect(subject.attachment_file_name).to eq("Captura_de_tela_2011-08-10_às_13.32.17.png")
         expect(subject.attachment_file_size).to eq(3288)
         expect(subject.created_at).to eq(DateTime.parse("2015-11-04T16:05:16-02:00"))
         expect(subject.updated_at).to eq(DateTime.parse("2015-11-04T16:05:16-02:00"))
