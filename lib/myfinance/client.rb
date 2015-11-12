@@ -16,6 +16,14 @@ module Myfinance
       false
     end
 
+    def attachments
+      Myfinance::Resources::Attachment.new(http)
+    end
+
+    def bank_statements
+      Myfinance::Resources::BankStatement.new(http)
+    end
+
     def deposit_accounts
       Myfinance::Resources::DepositAccount.new(http)
     end
@@ -32,16 +40,12 @@ module Myfinance
       Myfinance::Resources::PayableAccount.new(http)
     end
 
+    def people
+      Myfinance::Resources::Person.new(http)
+    end
+
     def receivable_accounts
       Myfinance::Resources::ReceivableAccount.new(http)
-    end
-
-    def attachments
-      Myfinance::Resources::Attachment.new(http)
-    end
-
-    def bank_statements
-      Myfinance::Resources::BankStatement.new(http)
     end
   end
 end

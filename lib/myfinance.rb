@@ -17,6 +17,7 @@ require "myfinance/entities/entity"
 require "myfinance/entities/financial_account"
 require "myfinance/entities/financial_transaction"
 require "myfinance/entities/payable_account"
+require "myfinance/entities/person"
 require "myfinance/entities/receivable_account"
 
 require "myfinance/entities/attachment_collection"
@@ -24,6 +25,7 @@ require "myfinance/entities/deposit_account_collection"
 require "myfinance/entities/entity_collection"
 require "myfinance/entities/financial_transaction_collection"
 require "myfinance/entities/payable_account_collection"
+require "myfinance/entities/person_collection"
 require "myfinance/entities/receivable_account_collection"
 
 require "myfinance/resources/base"
@@ -34,6 +36,7 @@ require "myfinance/resources/entity"
 require "myfinance/resources/financial_account"
 require "myfinance/resources/financial_transaction"
 require "myfinance/resources/payable_account"
+require "myfinance/resources/person"
 require "myfinance/resources/receivable_account"
 
 module Myfinance
