@@ -39,5 +39,9 @@ module Myfinance
     def attachments
       Myfinance::Resources::Attachment.new(http)
     end
+
+    def bank_statements
+      Myfinance::Resources::BankStatement.new(http)
+    end
   end
 end
