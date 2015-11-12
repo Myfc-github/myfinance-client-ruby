@@ -34,4 +34,34 @@ describe Myfinance::Resources::BankStatement do
       end
     end
   end
+
+  describe "#create", vcr: true do
+    let(:params) do
+      {
+        bank_statement: {
+          deposit_account_id: deposit_account_id.to_s,
+          file: File.open("spec/fixtures/BB_OFX.ofx", "r")
+        }
+      }
+    end
+
+    context "when success" do
+      subject { client.bank_statements.create(entity_id, deposit_account_id, params) }
+
+      it "returns a created bank_statement" do
+        expect(subject.class).to eq(Myfinance::Entities::BankStatementImport)
+        expect(subject.url).to eq("/entities/3798/deposit_accounts/14268/bank_statements/18213")
+        expect(subject.parsed_body).to eq({})
+      end
+    end
+
+    context "when not found" do
+      let(:client) { Myfinance.client("") }
+      subject { client.bank_statements.create(entity_id, deposit_account_id, params) }
+
+      it "raises NotFound" do
+        expect{ subject }.to raise_error(Myfinance::RequestError)
+      end
+    end
+  end
 end

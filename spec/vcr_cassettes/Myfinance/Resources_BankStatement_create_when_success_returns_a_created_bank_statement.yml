@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox.myfinance.com.br/entities/3798/deposit_accounts/14268/bank_statements
+    body:
+      encoding: US-ASCII
+      string: bank_statement[deposit_account_id]=14268&bank_statement[file]=BB_OFX.ofx=application/octet-stream=/Users/vagnerzampieri/Projects/myfinance/myfinance-client-ruby/spec/fixtures/BB_OFX.ofx
+    headers:
+      User-Agent:
+      - Myfinance Ruby Client v0.3.3
+      Accept:
+      - application/json
+      Content-Type:
+      - multipart/form-data
+      Authorization:
+      - Basic YjU1MmRkNWE4NTk4Y2EwODliOTFjNWUzNTVhODNiODZlNDY5NmFlZmFjOWVhYTA1Olg=
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Thu, 12 Nov 2015 13:54:13 GMT
+      ETag:
+      - '"7215ee9c7d9dc229d2921a40e899ec5f"'
+      Location:
+      - "/entities/3798/deposit_accounts/14268/bank_statements/18213"
+      Server:
+      - nginx/1.8.0
+      Set-Cookie:
+      - _financecompany_session=BAh7BkkiD3Nlc3Npb25faWQGOgZFVEkiJTg0YTQyYzg5NmRkZWUwZDAxMTA2ODA3MTRiMDAwYzZhBjsAVA%3D%3D--321456ab4e721d659b545a17380e58e25cb5d8c8;
+        path=/; HttpOnly
+      X-Rack-Cache:
+      - invalidate, pass
+      X-Request-Id:
+      - 2aa33c756234c0eb13064c978c0b1b82
+      X-Runtime:
+      - '0.536246'
+      X-UA-Compatible:
+      - IE=Edge,chrome=1
+      Content-Length:
+      - '1'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: " "
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.myfinance.com.br/entities/3798/deposit_accounts/14268/bank_statements
+  recorded_at: Thu, 12 Nov 2015 13:54:13 GMT
+recorded_with: VCR 2.9.3

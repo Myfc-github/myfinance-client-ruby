@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox.myfinance.com.br/entities/3798/deposit_accounts/14268/bank_statements
+    body:
+      encoding: US-ASCII
+      string: bank_statement[deposit_account_id]=14268&bank_statement[file]=BB_OFX.ofx=application/octet-stream=/Users/vagnerzampieri/Projects/myfinance/myfinance-client-ruby/spec/fixtures/BB_OFX.ofx
+    headers:
+      User-Agent:
+      - Myfinance Ruby Client v0.3.3
+      Accept:
+      - application/json
+      Content-Type:
+      - multipart/form-data
+      Authorization:
+      - Basic Olg=
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - text/html; charset=utf-8
+      Date:
+      - Thu, 12 Nov 2015 13:54:13 GMT
+      Server:
+      - nginx/1.8.0
+      WWW-Authenticate:
+      - Basic realm="Myfinance API"
+      X-Rack-Cache:
+      - invalidate, pass
+      X-Request-Id:
+      - b684bc1df0da84e52dfc3e5072906fe9
+      X-Runtime:
+      - '0.036225'
+      X-UA-Compatible:
+      - IE=Edge,chrome=1
+      Content-Length:
+      - '27'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |
+        HTTP Basic: Access denied.
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.myfinance.com.br/entities/3798/deposit_accounts/14268/bank_statements
+  recorded_at: Thu, 12 Nov 2015 13:54:14 GMT
+recorded_with: VCR 2.9.3
