@@ -32,6 +32,10 @@ module Myfinance
       Myfinance::Resources::Category.new(http)
     end
 
+    def classification_centers
+      Myfinance::Resources::ClassificationCenter.new(http)
+    end
+
     def entities
       Myfinance::Resources::Entity.new(http)
     end

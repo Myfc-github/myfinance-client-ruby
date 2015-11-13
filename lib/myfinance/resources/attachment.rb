@@ -1,33 +1,6 @@
 module Myfinance
   module Resources
-    class Attachment < Base
-      #
-      # List all attachments of the user
-      #
-      # [API]
-      #   Method: <tt>GET /entities/:entity_id/attachments</tt>
-      #
-      #   Documentation: https://app.myfinance.com.br/docs/api/attachments#get_index
-      #
-      def find_all(entity_id)
-        http.get("/entities/#{entity_id}/attachments", body: {}) do |response|
-          respond_with_collection(response)
-        end
-      end
-
-      #
-      # Find a specific attachment
-      #
-      # [API]
-      #   Method: <tt>GET /entities/:entity_id/attachments/:id</tt>
-      #
-      #   Documentation: https://app.myfinance.com.br/docs/api/attachments#get_show
-      #
-      def find(entity_id, id)
-        http.get("/entities/#{entity_id}/attachments/#{id}", body: {}) do |response|
-          respond_with_object(response, 'attachment')
-        end
-      end
+    class Attachment < DefaultMethods
 
       #
       # Generate a empty object from attachment
@@ -39,20 +12,6 @@ module Myfinance
       #
       def get_new(entity_id)
         http.get("/entities/#{entity_id}/attachments/new", body: {}) do |response|
-          respond_with_object(response, 'attachment')
-        end
-      end
-
-      #
-      # Create a specific attachment
-      #
-      # [API]
-      #   Method: <tt>POST /entities/:entity_id/attachments</tt>
-      #
-      #   Documentation: https://app.myfinance.com.br/docs/api/attachments#post_create
-      #
-      def create(entity_id, params)
-        http.post("/entities/#{entity_id}/attachments", { body: params, content_type: "multipart/form-data" }) do |response|
           respond_with_object(response, 'attachment')
         end
       end
@@ -71,32 +30,17 @@ module Myfinance
         end
       end
 
-      #
-      # Update a specific attachment
-      #
-      # [API]
-      #   Method: <tt>PUT /entities/:entity_id/attachments/:id</tt>
-      #
-      #   Documentation: https://app.myfinance.com.br/docs/api/attachments#put_update
-      #
-      def update(entity_id, id, params)
-        http.put("/entities/#{entity_id}/attachments/#{id}", { body: params, content_type: "multipart/form-data" }) do |response|
-          respond_with_object(response, 'attachment')
-        end
+      private
+
+      # args == entity_id, id=nil
+      def endpoint(args=[])
+        str = "/entities/#{args.shift}/attachments"
+        str << "/#{args.first}" unless args.empty?
+        str
       end
 
-      #
-      # Delete a specific attachment
-      #
-      # [API]
-      #   Method: <tt>DELETE /entities/:entity_id/attachments/:id</tt>
-      #
-      #   Documentation: https://app.myfinance.com.br/docs/api/attachments#delete_destroy
-      #
-      def destroy(entity_id, id)
-        http.delete("/entities/#{entity_id}/attachments/#{id}", body: {}) do |response|
-          response.code
-        end
+      def resource_key
+        'attachment'
       end
     end
   end

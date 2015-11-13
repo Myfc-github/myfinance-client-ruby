@@ -19,7 +19,7 @@ module Myfinance
       #   Documentation: https://app.myfinance.com.br/docs/api/receivable_accounts#get_index
       #
       def find_all(entity_id)
-        endpoint = endpoint_for(nil, entity_id, __method__)
+        endpoint = parameterize_endpoint(nil, entity_id, __method__)
         http.get(endpoint, body: {}) do |response|
           respond_with_collection(response)
         end
@@ -36,7 +36,7 @@ module Myfinance
       #   Documentation: https://app.myfinance.com.br/docs/api/receivable_accounts#get_new
       #
       def get_new(entity_id)
-        endpoint = endpoint_for(nil, entity_id, __method__)
+        endpoint = parameterize_endpoint(nil, entity_id, __method__)
         http.get(endpoint, body: {}) do |response|
           respond_with_object(response, resource_key)
         end
@@ -53,7 +53,7 @@ module Myfinance
       #   Documentation: https://app.myfinance.com.br/docs/api/receivable_accounts#post_create
       #
       def create(entity_id, params = {})
-        request_and_build_response(:post, endpoint_for(nil, entity_id, __method__), params)
+        request_and_build_response(:post, parameterize_endpoint(nil, entity_id, __method__), params)
       end
 
       #
@@ -67,7 +67,7 @@ module Myfinance
       #   Documentation: https://app.myfinance.com.br/docs/api/receivable_accounts#put_update
       #
       def update(id, entity_id, params = {})
-        request_and_build_response(:put, endpoint_for(id, entity_id, __method__), params)
+        request_and_build_response(:put, parameterize_endpoint(id, entity_id, __method__), params)
       end
 
       #
@@ -81,7 +81,7 @@ module Myfinance
       #   Documentation: https://app.myfinance.com.br/docs/api/receivable_accounts#delete_destroy
       #
       def destroy(id, entity_id)
-        http.delete(endpoint_for(id, entity_id, __method__)) do |response|
+        http.delete(parameterize_endpoint(id, entity_id, __method__)) do |response|
           true
         end
       end
@@ -97,7 +97,7 @@ module Myfinance
       #   Documentation: https://app.myfinance.com.br/docs/api/receivable_accounts#post_create_as_recurrent
       #
       def create_as_recurrent(entity_id, params = {})
-        request_and_build_response(:post, endpoint_for(nil, entity_id, __method__), params)
+        request_and_build_response(:post, parameterize_endpoint(nil, entity_id, __method__), params)
       end
 
       #
@@ -111,7 +111,7 @@ module Myfinance
       #   Documentation: https://app.myfinance.com.br/docs/api/receivable_accounts#post_create_as_parcelled
       #
       def create_as_parcelled(entity_id, params = {})
-        request_and_build_response(:post, endpoint_for(nil, entity_id, __method__), params)
+        request_and_build_response(:post, parameterize_endpoint(nil, entity_id, __method__), params)
       end
 
       #
@@ -125,7 +125,7 @@ module Myfinance
       #   Documentation: https://app.myfinance.com.br/docs/api/receivable_accounts#delete_destroy_as_recurrent
       #
       def destroy_as_recurrent(id, entity_id)
-        http.delete(endpoint_for(id, entity_id, __method__)) do |response|
+        http.delete(parameterize_endpoint(id, entity_id, __method__)) do |response|
           true
         end
       end
@@ -141,7 +141,7 @@ module Myfinance
       #   Documentation: https://app.myfinance.com.br/docs/api/receivable_accounts#delete_destroy_many
       #
       def destroy_many(entity_id, params)
-        http.delete(endpoint_for(nil, entity_id, __method__), body: params) do |response|
+        http.delete(parameterize_endpoint(nil, entity_id, __method__), body: params) do |response|
           true
         end
       end
@@ -152,10 +152,6 @@ module Myfinance
         http.send(method, endpoint, body: { resource_key => params }) do |response|
           respond_with_object(response, resource_key)
         end
-      end
-
-      def endpoint_for(id, entity_id, key)
-        parameterize_endpoint(id, entity_id, key)
       end
 
       def default_endpoints
@@ -178,7 +174,7 @@ module Myfinance
 
       def set_method_for(action)
         self.class.send(:define_method, action) do |id, entity_id, params={}|
-          request_and_build_response(:put, endpoint_for(id, entity_id, action), params)
+          request_and_build_response(:put, parameterize_endpoint(id, entity_id, action), params)
         end
       end
     end
