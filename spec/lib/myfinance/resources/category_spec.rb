@@ -72,28 +72,12 @@ describe Myfinance::Resources::Category do
       end
     end
   end
-=begin
+
   describe "#create", vcr: true do
     let(:params) do
       {
-        person: {
-          address: "Rua Tal",
-          address_number: "42",
-          city: "Rio de Janeiro",
-          complement: "sala 1234",
-          country: "Brasil",
-          customer: true,
-          email: "cliente@fulano.com",
-          federation_subscription_number: "27.206.831/0001-70",
-          name: "Fulano de Tal",
-          neighborhood: "Centro",
-          note: "Notas sobre este cliente...",
-          person_type: "JuridicalCategory",
-          phone: "(21) 5555-1234",
-          site: "http://www.fulano.com",
-          state: "RJ",
-          supplier: false,
-          zip_code: "22290-080"
+        category: {
+          name: "Babá das couves"
         }
       }
     end
@@ -101,8 +85,22 @@ describe Myfinance::Resources::Category do
     context "when success" do
       subject { client.categories.create(params) }
 
-      it "returns a created person" do
+      it "returns a created category" do
         expect(subject.class).to eq(Myfinance::Entities::Category)
+        expect(subject.cost).to be_truthy
+        expect(subject.created_at).to eq(DateTime.parse("2015-11-13T10:10:33-02:00"))
+        expect(subject.excel_import_id).to be_nil
+        expect(subject.force_destroy).to be_falsy
+        expect(subject.full_name).to eq("Babá das couves")
+        expect(subject.id).to eq(536752)
+        expect(subject.imported_from_sync).to be_falsy
+        expect(subject.interested_users_ids).to eq([3703])
+        expect(subject.modified_by_sync).to be_falsy
+        expect(subject.name).to eq("Babá das couves")
+        expect(subject.parent_id).to be_nil
+        expect(subject.revenue).to be_truthy
+        expect(subject.updated_at).to eq(DateTime.parse("2015-11-13T10:10:33-02:00"))
+        expect(subject.use_count).to eq(0)
       end
     end
 
@@ -115,7 +113,7 @@ describe Myfinance::Resources::Category do
       end
     end
   end
-=end
+
   describe "#update", vcr: true do
     let(:params) do
       {
@@ -142,10 +140,10 @@ describe Myfinance::Resources::Category do
       end
     end
   end
-=begin
+
   describe "#destroy", vcr: true do
     context "when success" do
-      subject { client.categories.destroy(536751) }
+      subject { client.categories.destroy(532431) }
 
       it "returns a empty body with code 200" do
         expect(subject).to eq(200)
@@ -154,12 +152,11 @@ describe Myfinance::Resources::Category do
 
     context "when not found" do
       let(:client) { Myfinance.client("") }
-      subject { client.categories.destroy(536751) }
+      subject { client.categories.destroy(532431) }
 
       it "raises NotFound" do
         expect { subject }.to raise_error(Myfinance::RequestError)
       end
     end
   end
-=end
 end

@@ -14,40 +14,46 @@ http_interactions:
       Content-Type:
       - application/json
       Authorization:
-      - Basic Olg=
+      - Basic YjU1MmRkNWE4NTk4Y2EwODliOTFjNWUzNTVhODNiODZlNDY5NmFlZmFjOWVhYTA1Olg=
   response:
     status:
-      code: 401
-      message: Unauthorized
+      code: 200
+      message: OK
     headers:
       Cache-Control:
-      - no-cache
+      - max-age=0, private, must-revalidate
+      Content-Encoding:
+      - gzip
       Content-Type:
-      - text/html; charset=utf-8
+      - application/json; charset=utf-8
       Date:
-      - Fri, 13 Nov 2015 12:07:54 GMT
+      - Fri, 13 Nov 2015 12:06:57 GMT
+      ETag:
+      - W/"7215ee9c7d9dc229d2921a40e899ec5f"
       Server:
       - nginx/1.8.0
-      WWW-Authenticate:
-      - Basic realm="Myfinance API"
+      Set-Cookie:
+      - _financecompany_session=BAh7BkkiD3Nlc3Npb25faWQGOgZFVEkiJWRhNzY1YjgyYmFmZTYwMzY4NDRhMjJjOGQ3NGQyZWYxBjsAVA%3D%3D--e82f592ddc8c36d4c72343a2b473f81f04075684;
+        path=/; HttpOnly
+      Vary:
+      - Accept-Encoding
       X-Rack-Cache:
       - invalidate, pass
       X-Request-Id:
-      - df28d8038b36896aabeac28e127cde5b
+      - 75450889fc4d71426c69ebd843e046a5
       X-Runtime:
-      - '0.004310'
+      - '0.075518'
       X-UA-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
-      - '27'
+      - '21'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: |
-        HTTP Basic: Access denied.
+      string: " "
     http_version: '1.1'
     adapter_metadata:
       effective_url: https://sandbox.myfinance.com.br/categories/532431
-  recorded_at: Fri, 13 Nov 2015 12:07:55 GMT
+  recorded_at: Fri, 13 Nov 2015 12:06:57 GMT
 recorded_with: VCR 2.9.3

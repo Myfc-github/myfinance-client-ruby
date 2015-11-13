@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox.myfinance.com.br/categories
+    body:
+      encoding: UTF-8
+      string: '{"category":{"name":"Babá das couves"}}'
+    headers:
+      User-Agent:
+      - Myfinance Ruby Client v0.3.3
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic YjU1MmRkNWE4NTk4Y2EwODliOTFjNWUzNTVhODNiODZlNDY5NmFlZmFjOWVhYTA1Olg=
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 13 Nov 2015 12:10:33 GMT
+      ETag:
+      - '"2ff5203b574930bab93cf3f159642bea"'
+      Location:
+      - https://sandbox.myfinance.com.br/categories/536752
+      Server:
+      - nginx/1.8.0
+      Set-Cookie:
+      - _financecompany_session=BAh7BkkiD3Nlc3Npb25faWQGOgZFVEkiJTU2YmZmNjMzYjQ1Y2VkMDY3YmEyOTYwMjU4MDA1Yzk0BjsAVA%3D%3D--26cf969a085dd486b0fbc844ba989a110088a1c6;
+        path=/; HttpOnly
+      X-Rack-Cache:
+      - invalidate, pass
+      X-Request-Id:
+      - c51b1dae000ac87ee0c26b5aa1217710
+      X-Runtime:
+      - '0.038908'
+      X-UA-Compatible:
+      - IE=Edge,chrome=1
+      Content-Length:
+      - '358'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"category":{"cost":true,"created_at":"2015-11-13T10:10:33-02:00","excel_import_id":null,"force_destroy":false,"full_name":"Bab\u00e1
+        das couves","id":536752,"imported_from_sync":false,"interested_users_ids":[3703],"modified_by_sync":false,"name":"Bab\u00e1
+        das couves","parent_id":null,"revenue":true,"updated_at":"2015-11-13T10:10:33-02:00","use_count":0}}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.myfinance.com.br/categories
+  recorded_at: Fri, 13 Nov 2015 12:10:33 GMT
+recorded_with: VCR 2.9.3

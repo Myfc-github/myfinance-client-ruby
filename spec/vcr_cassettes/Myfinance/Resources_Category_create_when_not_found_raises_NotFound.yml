@@ -1,11 +1,11 @@
 ---
 http_interactions:
 - request:
-    method: delete
-    uri: https://sandbox.myfinance.com.br/categories/532431
+    method: post
+    uri: https://sandbox.myfinance.com.br/categories
     body:
       encoding: UTF-8
-      string: "{}"
+      string: '{"category":{"name":"Babá das couves"}}'
     headers:
       User-Agent:
       - Myfinance Ruby Client v0.3.3
@@ -25,7 +25,7 @@ http_interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Fri, 13 Nov 2015 12:07:54 GMT
+      - Fri, 13 Nov 2015 12:10:33 GMT
       Server:
       - nginx/1.8.0
       WWW-Authenticate:
@@ -33,9 +33,9 @@ http_interactions:
       X-Rack-Cache:
       - invalidate, pass
       X-Request-Id:
-      - df28d8038b36896aabeac28e127cde5b
+      - 67e8be1cf9a19d2dff98afe96f2c051f
       X-Runtime:
-      - '0.004310'
+      - '0.004097'
       X-UA-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
@@ -48,6 +48,6 @@ http_interactions:
         HTTP Basic: Access denied.
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://sandbox.myfinance.com.br/categories/532431
-  recorded_at: Fri, 13 Nov 2015 12:07:55 GMT
+      effective_url: https://sandbox.myfinance.com.br/categories
+  recorded_at: Fri, 13 Nov 2015 12:10:33 GMT
 recorded_with: VCR 2.9.3
