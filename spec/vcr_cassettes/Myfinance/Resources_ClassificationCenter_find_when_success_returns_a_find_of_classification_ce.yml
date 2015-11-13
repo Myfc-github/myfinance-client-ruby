@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.myfinance.com.br/classification_centers/17981
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - Myfinance Ruby Client v0.3.3
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic YjU1MmRkNWE4NTk4Y2EwODliOTFjNWUzNTVhODNiODZlNDY5NmFlZmFjOWVhYTA1Olg=
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 13 Nov 2015 18:35:26 GMT
+      ETag:
+      - W/"08462b061626202da8f8a94146480bdc"
+      Server:
+      - nginx/1.8.0
+      Vary:
+      - Accept-Encoding
+      X-Rack-Cache:
+      - miss
+      X-Request-Id:
+      - e348299d1d37994c73c293d4834901b8
+      X-Runtime:
+      - '0.024464'
+      X-UA-Compatible:
+      - IE=Edge,chrome=1
+      Content-Length:
+      - '167'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"classification_center":{"cost_center":true,"created_at":"2015-11-13T16:28:21-02:00","entity_id":3798,"excel_import_id":null,"id":17981,"name":"Classificador","revenue_center":true,"updated_at":"2015-11-13T16:28:21-02:00","use_count":0}}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.myfinance.com.br/classification_centers/17981
+  recorded_at: Fri, 13 Nov 2015 18:35:26 GMT
+recorded_with: VCR 2.9.3
