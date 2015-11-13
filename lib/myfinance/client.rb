@@ -36,6 +36,10 @@ module Myfinance
       Myfinance::Resources::ClassificationCenter.new(http)
     end
 
+    def credit_cards
+      Myfinance::Resources::CreditCard.new(http)
+    end
+
     def entities
       Myfinance::Resources::Entity.new(http)
     end

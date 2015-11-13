@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.myfinance.com.br/entities/3798/credit_cards
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - Myfinance Ruby Client v0.3.3
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic YjU1MmRkNWE4NTk4Y2EwODliOTFjNWUzNTVhODNiODZlNDY5NmFlZmFjOWVhYTA1Olg=
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 13 Nov 2015 19:32:52 GMT
+      ETag:
+      - W/"e7bc2ffba6a27d7749090f199a41f409"
+      Server:
+      - nginx/1.8.0
+      Vary:
+      - Accept-Encoding
+      X-Rack-Cache:
+      - miss
+      X-Request-Id:
+      - 8a590e49f9e8e3ad02d0f95e0531d11a
+      X-Runtime:
+      - '0.030080'
+      X-UA-Compatible:
+      - IE=Edge,chrome=1
+      Content-Length:
+      - '320'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '[{"credit_card":{"id":42,"name":"Visa","flag":"Visa","closing_day":21,"expiration_day":1,"balance":"0.0","entity_id":3798,"category_id":null,"person_id":null,"classification_center_id":null,"observation":"","archived_at":null,"flag_image_url":"https://dbv9lf0nkg7d3.cloudfront.net/assets/logos/logo-creditcard-visa-6757228292690c5f271966ba521f91be.png","links":[{"rel":"self","href":"https://sandbox.myfinance.com.br/entities/3798/credit_cards/42","method":"get"}]}}]'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.myfinance.com.br/entities/3798/credit_cards
+  recorded_at: Fri, 13 Nov 2015 19:32:52 GMT
+recorded_with: VCR 2.9.3
