@@ -1,0 +1,71 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://sandbox.myfinance.com.br/entities/3798/credit_cards/43/transactions/314140
+    body:
+      encoding: UTF-8
+      string: '{"credit_card_transaction":{"observation":"This is an observation"}}'
+    headers:
+      User-Agent:
+      - Myfinance Ruby Client v0.3.3
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic YjU1MmRkNWE4NTk4Y2EwODliOTFjNWUzNTVhODNiODZlNDY5NmFlZmFjOWVhYTA1Olg=
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 16 Nov 2015 18:05:25 GMT
+      ETag:
+      - W/"c1f7bf3dfe9b798375765369988a38c3"
+      Server:
+      - nginx/1.8.0
+      Set-Cookie:
+      - _financecompany_session=BAh7BkkiD3Nlc3Npb25faWQGOgZFVEkiJTRmNmM1ZGY5YzQ4NzBkYmMxNjVmNzkwYTY5ODg1ZjFkBjsAVA%3D%3D--8f347894b75f0a5b656a494274fbbf2ed206864e;
+        path=/; HttpOnly
+      Vary:
+      - Accept-Encoding
+      X-Rack-Cache:
+      - invalidate, pass
+      X-Request-Id:
+      - e4e62ec3312f06dc0d8af399f8c71dbf
+      X-Runtime:
+      - '0.154582'
+      X-UA-Compatible:
+      - IE=Edge,chrome=1
+      Content-Length:
+      - '330'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJjcmVkaXRfY2FyZF90cmFuc2FjdGlvbiI6eyJpZCI6MzE0MTQwLCJhbW91
+        bnQiOiItMjAuMCIsIm9jY3VycmVkX2F0IjoiMjAxNS0xMS0xNiIsImRvY3Vt
+        ZW50IjoiIiwib2JzZXJ2YXRpb24iOiJUaGlzIGlzIGFuIG9ic2VydmF0aW9u
+        IiwiZGVzY3JpcHRpb24iOiJBbG1vw6dvIiwiY2xhc3NpZmljYXRpb25fY2Vu
+        dGVyX2lkIjpudWxsLCJjYXRlZ29yeV9pZCI6NTMyMzE0LCJwZXJzb25faWQi
+        Om51bGwsImNyZWRpdF9jYXJkX2lkIjo0MywiY3JlZGl0X2NhcmRfaW52b2lj
+        ZSI6eyJpZCI6MjE0NSwic3RhcnRfZGF0ZSI6IjIwMTUtMTAtMjIiLCJlbmRf
+        ZGF0ZSI6IjIwMTUtMTEtMjEiLCJkdWVfZGF0ZSI6IjIwMTUtMTItMDEiLCJi
+        YWxhbmNlIjoiLTIwLjAifSwicGFyY2VscyI6bnVsbCwicGFyY2VsIjpudWxs
+        LCJsaW5rcyI6W3sicmVsIjoic2VsZiIsImhyZWYiOiJodHRwczovL3NhbmRi
+        b3gubXlmaW5hbmNlLmNvbS5ici9lbnRpdGllcy8zNzk4L2NyZWRpdF9jYXJk
+        cy80My90cmFuc2FjdGlvbnMvMzE0MTQwIiwibWV0aG9kIjoiZ2V0In1dfX0=
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.myfinance.com.br/entities/3798/credit_cards/43/transactions/314140
+  recorded_at: Mon, 16 Nov 2015 18:05:25 GMT
+recorded_with: VCR 2.9.3

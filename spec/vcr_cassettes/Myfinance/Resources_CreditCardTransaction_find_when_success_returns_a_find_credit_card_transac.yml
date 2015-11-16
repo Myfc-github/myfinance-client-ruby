@@ -1,0 +1,68 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.myfinance.com.br/entities/3798/credit_cards/43/transactions/314140
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - Myfinance Ruby Client v0.3.3
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic YjU1MmRkNWE4NTk4Y2EwODliOTFjNWUzNTVhODNiODZlNDY5NmFlZmFjOWVhYTA1Olg=
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 16 Nov 2015 17:25:35 GMT
+      ETag:
+      - W/"9c157109cddb81877e93f0acbc77c4a0"
+      Server:
+      - nginx/1.8.0
+      Vary:
+      - Accept-Encoding
+      X-Rack-Cache:
+      - miss
+      X-Request-Id:
+      - 9b76b73ba0bf50adbfe2cafc0c64921a
+      X-Runtime:
+      - '0.035835'
+      X-UA-Compatible:
+      - IE=Edge,chrome=1
+      Content-Length:
+      - '318'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJjcmVkaXRfY2FyZF90cmFuc2FjdGlvbiI6eyJpZCI6MzE0MTQwLCJhbW91
+        bnQiOiItMjAuMCIsIm9jY3VycmVkX2F0IjoiMjAxNS0xMS0xNiIsImRvY3Vt
+        ZW50IjoiIiwib2JzZXJ2YXRpb24iOiIiLCJkZXNjcmlwdGlvbiI6IkFsbW/D
+        p28iLCJjbGFzc2lmaWNhdGlvbl9jZW50ZXJfaWQiOm51bGwsImNhdGVnb3J5
+        X2lkIjo1MzIzMTQsInBlcnNvbl9pZCI6bnVsbCwiY3JlZGl0X2NhcmRfaWQi
+        OjQzLCJjcmVkaXRfY2FyZF9pbnZvaWNlIjp7ImlkIjoyMTQ1LCJzdGFydF9k
+        YXRlIjoiMjAxNS0xMC0yMiIsImVuZF9kYXRlIjoiMjAxNS0xMS0yMSIsImR1
+        ZV9kYXRlIjoiMjAxNS0xMi0wMSIsImJhbGFuY2UiOiItMjAuMCJ9LCJwYXJj
+        ZWxzIjpudWxsLCJwYXJjZWwiOm51bGwsImxpbmtzIjpbeyJyZWwiOiJzZWxm
+        IiwiaHJlZiI6Imh0dHBzOi8vc2FuZGJveC5teWZpbmFuY2UuY29tLmJyL2Vu
+        dGl0aWVzLzM3OTgvY3JlZGl0X2NhcmRzLzQzL3RyYW5zYWN0aW9ucy8zMTQx
+        NDAiLCJtZXRob2QiOiJnZXQifV19fQ==
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.myfinance.com.br/entities/3798/credit_cards/43/transactions/314140
+  recorded_at: Mon, 16 Nov 2015 17:25:35 GMT
+recorded_with: VCR 2.9.3
