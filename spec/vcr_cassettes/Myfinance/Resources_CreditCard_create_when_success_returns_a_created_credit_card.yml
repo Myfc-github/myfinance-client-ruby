@@ -1,0 +1,66 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox.myfinance.com.br/entities/3798/credit_cards
+    body:
+      encoding: UTF-8
+      string: '{"credit_card":{"name":"Cartão 1","flag":"MasterCard","closing_day":20,"expiration_day":2}}'
+    headers:
+      User-Agent:
+      - Myfinance Ruby Client v0.3.3
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic YjU1MmRkNWE4NTk4Y2EwODliOTFjNWUzNTVhODNiODZlNDY5NmFlZmFjOWVhYTA1Olg=
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 16 Nov 2015 14:11:50 GMT
+      ETag:
+      - '"a4e3a85b473f4c2eb6e67985212a7e43"'
+      Server:
+      - nginx/1.8.0
+      Set-Cookie:
+      - _financecompany_session=BAh7BkkiD3Nlc3Npb25faWQGOgZFVEkiJTdiN2MyMThhYWZkODY0YmU4YzkzYzE2YjI5MjhlNzUwBjsAVA%3D%3D--85d8acdb30bb205de8079264e5d73ca82efed799;
+        path=/; HttpOnly
+      X-Rack-Cache:
+      - invalidate, pass
+      X-Request-Id:
+      - 52fd82191e9485af43d24bcef0ae1f7e
+      X-Runtime:
+      - '0.046779'
+      X-UA-Compatible:
+      - IE=Edge,chrome=1
+      Content-Length:
+      - '484'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJjcmVkaXRfY2FyZCI6eyJpZCI6NDQsIm5hbWUiOiJDYXJ0w6NvIDEiLCJm
+        bGFnIjoiTWFzdGVyQ2FyZCIsImNsb3NpbmdfZGF5IjoyMCwiZXhwaXJhdGlv
+        bl9kYXkiOjIsImJhbGFuY2UiOiIwLjAiLCJlbnRpdHlfaWQiOjM3OTgsImNh
+        dGVnb3J5X2lkIjpudWxsLCJwZXJzb25faWQiOm51bGwsImNsYXNzaWZpY2F0
+        aW9uX2NlbnRlcl9pZCI6bnVsbCwib2JzZXJ2YXRpb24iOm51bGwsImFyY2hp
+        dmVkX2F0IjpudWxsLCJmbGFnX2ltYWdlX3VybCI6Imh0dHBzOi8vZGJ2OWxm
+        MG5rZzdkMy5jbG91ZGZyb250Lm5ldC9hc3NldHMvbG9nb3MvbG9nby1jcmVk
+        aXRjYXJkLW1hc3RlcmNhcmQtODNlMmYyNTgyNTVkMDkwMGE1OTVlNWM0NDdm
+        OTExNGMucG5nIiwibGlua3MiOlt7InJlbCI6InNlbGYiLCJocmVmIjoiaHR0
+        cHM6Ly9zYW5kYm94Lm15ZmluYW5jZS5jb20uYnIvZW50aXRpZXMvMzc5OC9j
+        cmVkaXRfY2FyZHMvNDQiLCJtZXRob2QiOiJnZXQifV19fQ==
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.myfinance.com.br/entities/3798/credit_cards
+  recorded_at: Mon, 16 Nov 2015 14:11:50 GMT
+recorded_with: VCR 2.9.3
