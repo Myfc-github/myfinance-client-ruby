@@ -1,38 +1,26 @@
 module Myfinance
   module Resources
-    #
-    # A wrapper to Myfinance entities API
-    #
-    # [API]
-    #   Documentation: https://app.myfinance.com.br/docs/api/entities
-    #
-    class Entity < Base
+    class Entity < DefaultMethods
+
       #
-      # List all entities of the user
+      # Return attributes from entity
       #
       # [API]
-      #   Method: <tt>GET /entities</tt>
+      #   Method: <tt>GET /entities/new</tt>
       #
-      #   Documentation: https://app.myfinance.com.br/docs/api/entities#get_index
+      #   Documentation: https://app.myfinance.com.br/docs/api/entities#get_new
       #
-      def find_all
-        http.get('/entities', body: {}) do |response|
-          respond_with_collection(response)
+      def get_new
+        http.get("/entities/new", body: {}) do |response|
+          respond_with_object(response, 'entity')
         end
       end
 
-      #
-      # Find a specific entity
-      #
-      # [API]
-      #   Method: <tt>GET /entities/:id</tt>
-      #
-      #   Documentation: https://app.myfinance.com.br/docs/api/entities#get_show
-      #
-      def find(entity_id)
-        http.get("/entities/#{entity_id}", body: {}) do |response|
-          respond_with_object(response, 'entity')
-        end
+      private
+
+      def resource_key(plural=nil)
+        return 'entities' if plural
+        'entity'
       end
     end
   end

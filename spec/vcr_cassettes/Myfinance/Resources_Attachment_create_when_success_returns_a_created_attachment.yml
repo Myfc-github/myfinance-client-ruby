@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox.myfinance.com.br/entities/3798/attachments
+    body:
+      encoding: US-ASCII
+      string: attachment[entity_id]=3798&attachment[user_id]=3703&attachment[attachment]=Mensalidade_MyFinance_15-07-2015.oxps=application/octet-stream=/Users/vagnerzampieri/Projects/myfinance/myfinance-client-ruby/spec/fixtures/Mensalidade_MyFinance_15-07-2015.oxps
+    headers:
+      User-Agent:
+      - Myfinance Ruby Client v0.3.3
+      Accept:
+      - application/json
+      Content-Type:
+      - multipart/form-data
+      Authorization:
+      - Basic YjU1MmRkNWE4NTk4Y2EwODliOTFjNWUzNTVhODNiODZlNDY5NmFlZmFjOWVhYTA1Olg=
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 11 Nov 2015 13:30:20 GMT
+      ETag:
+      - '"fc81f22cecc8c811b5fa59ea7fa656ab"'
+      Location:
+      - https://sandbox.myfinance.com.br/entities/3798/attachments/1306
+      Server:
+      - nginx/1.8.0
+      Set-Cookie:
+      - _financecompany_session=BAh7BkkiD3Nlc3Npb25faWQGOgZFVEkiJWE4YTdhNWMzNmU5ZDk0ODQ5MmE2ZjI0ZjRkMDVmMGNmBjsAVA%3D%3D--04f091176a9bf29d17fb487930a5306c36b5f705;
+        path=/; HttpOnly
+      X-Rack-Cache:
+      - invalidate, pass
+      X-Request-Id:
+      - 724b116683bd5efe3a35ce1586b044f5
+      X-Runtime:
+      - '0.625788'
+      X-UA-Compatible:
+      - IE=Edge,chrome=1
+      Content-Length:
+      - '620'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"attachment":{"id":1306,"entity_id":3798,"title":null,"attachment_file_name":"Mensalidade_MyFinance_15-07-2015.oxps","attachment_content_type":"application/octet-stream","attachment_file_size":135328,"created_at":"2015-11-11T11:30:20-02:00","updated_at":"2015-11-11T11:30:20-02:00","download_url":"https://sandbox.myfinance.com.br/entities/3798/attachments/1306/download","attachables":[],"links":[{"rel":"self","href":"https://sandbox.myfinance.com.br/entities/3798/attachments/1306","method":"get"},{"rel":"download","href":"https://sandbox.myfinance.com.br/entities/3798/attachments/1306/download","method":"get"}]}}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.myfinance.com.br/entities/3798/attachments
+  recorded_at: Wed, 11 Nov 2015 13:30:20 GMT
+recorded_with: VCR 2.9.3

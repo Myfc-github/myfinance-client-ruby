@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox.myfinance.com.br/entities
+    body:
+      encoding: UTF-8
+      string: '{"entity":{"name":"Finanças"}}'
+    headers:
+      User-Agent:
+      - Myfinance Ruby Client v0.3.3
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic YjU1MmRkNWE4NTk4Y2EwODliOTFjNWUzNTVhODNiODZlNDY5NmFlZmFjOWVhYTA1Olg=
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Thu, 15 Oct 2015 19:11:08 GMT
+      ETag:
+      - '"702c8e5a372c77d179744529604ed605"'
+      Location:
+      - https://sandbox.myfinance.com.br/entities/3828
+      Server:
+      - nginx/1.8.0
+      Set-Cookie:
+      - _financecompany_session=BAh7BkkiD3Nlc3Npb25faWQGOgZFVEkiJWQ2NjRiMzViNmFjODQxMDFjZWY4Y2EyNjMwN2M5NjNiBjsAVA%3D%3D--4b8ffe63994b7faba7334736fe9df4d8e033d8ca;
+        path=/; HttpOnly
+      X-Rack-Cache:
+      - invalidate, pass
+      X-Request-Id:
+      - 4c5a8ff5dc0181f7293f200522a8979b
+      X-Runtime:
+      - '0.074290'
+      X-UA-Compatible:
+      - IE=Edge,chrome=1
+      Content-Length:
+      - '297'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"entity":{"account_id":3613,"charging_uuid":null,"created_at":"2015-10-15T16:11:08-03:00","default_in_menu":false,"deleted_at":null,"federation_subscription_number":null,"force_destroy":false,"id":3828,"imported_from_sync_at":null,"name":"Finan\u00e7as","updated_at":"2015-10-15T16:11:08-03:00"}}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.myfinance.com.br/entities
+  recorded_at: Thu, 15 Oct 2015 19:11:08 GMT
+recorded_with: VCR 2.9.3

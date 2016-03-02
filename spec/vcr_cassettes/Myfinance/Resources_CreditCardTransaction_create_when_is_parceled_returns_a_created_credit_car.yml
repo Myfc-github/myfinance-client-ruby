@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox.myfinance.com.br/entities/3798/credit_cards/43/transactions
+    body:
+      encoding: UTF-8
+      string: '{"credit_card_transaction":{"amount":199.99,"occurred_at":"2013-04-20","number_of_parcels":5}}'
+    headers:
+      User-Agent:
+      - Myfinance Ruby Client v0.3.3
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic YjU1MmRkNWE4NTk4Y2EwODliOTFjNWUzNTVhODNiODZlNDY5NmFlZmFjOWVhYTA1Olg=
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Mon, 16 Nov 2015 19:03:06 GMT
+      ETag:
+      - '"728b34b62b164cbe2fcd3a38617df80b"'
+      Server:
+      - nginx/1.8.0
+      Set-Cookie:
+      - _financecompany_session=BAh7BkkiD3Nlc3Npb25faWQGOgZFVEkiJTFlMzdmYTVlMjgwZTM2ZTc0NWM2M2RhOTBlMmJmNmQwBjsAVA%3D%3D--2a080e054ee02b931db7dc781f1c57bd09827e75;
+        path=/; HttpOnly
+      X-Rack-Cache:
+      - invalidate, pass
+      X-Request-Id:
+      - 8dc382cad807639e0c08d7aae3dcdc86
+      X-Runtime:
+      - '0.828216'
+      X-UA-Compatible:
+      - IE=Edge,chrome=1
+      Content-Length:
+      - '632'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"credit_card_transaction":{"id":314143,"amount":"199.99","occurred_at":"2013-04-20","document":null,"observation":null,"description":null,"classification_center_id":null,"category_id":null,"person_id":null,"credit_card_id":43,"credit_card_invoice":{"id":2146,"start_date":"2013-03-22","end_date":"2013-04-21","due_date":"2013-05-01","balance":"599.97"},"parcels":5,"parcel":1,"links":[{"rel":"self","href":"https://sandbox.myfinance.com.br/entities/3798/credit_cards/43/transactions/314143","method":"get"},{"rel":"next","href":"https://sandbox.myfinance.com.br/entities/3798/credit_cards/43/transactions/314144","method":"get"}]}}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.myfinance.com.br/entities/3798/credit_cards/43/transactions
+  recorded_at: Mon, 16 Nov 2015 19:03:06 GMT
+recorded_with: VCR 2.9.3

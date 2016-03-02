@@ -21,7 +21,7 @@ describe Myfinance::Response do
     end
 
     context 'when timeout' do
-      let(:response) { double(success?: false, timed_out?: true) }
+      let(:response) { double(success?: false, timed_out?: true, code: 301) }
 
       it 'raises RequestTimeout' do
         expect { subject.resolve! }.to raise_error(Myfinance::RequestTimeout)

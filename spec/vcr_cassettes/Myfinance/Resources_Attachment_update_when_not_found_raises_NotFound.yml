@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://sandbox.myfinance.com.br/entities/3798/attachments/1306
+    body:
+      encoding: US-ASCII
+      string: attachment[attachment]=arquivo.qif=application/octet-stream=/Users/vagnerzampieri/Projects/myfinance/myfinance-client-ruby/spec/fixtures/arquivo.qif
+    headers:
+      User-Agent:
+      - Myfinance Ruby Client v0.3.3
+      Accept:
+      - application/json
+      Content-Type:
+      - multipart/form-data
+      Authorization:
+      - Basic Olg=
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - text/html; charset=utf-8
+      Date:
+      - Wed, 11 Nov 2015 16:50:04 GMT
+      Server:
+      - nginx/1.8.0
+      WWW-Authenticate:
+      - Basic realm="Myfinance API"
+      X-Rack-Cache:
+      - invalidate, pass
+      X-Request-Id:
+      - fd7dfd12bdaedb35a45c4e79a6391690
+      X-Runtime:
+      - '0.005069'
+      X-UA-Compatible:
+      - IE=Edge,chrome=1
+      Content-Length:
+      - '27'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |
+        HTTP Basic: Access denied.
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.myfinance.com.br/entities/3798/attachments/1306
+  recorded_at: Wed, 11 Nov 2015 16:50:05 GMT
+recorded_with: VCR 2.9.3

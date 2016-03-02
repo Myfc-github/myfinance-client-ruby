@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox.myfinance.com.br/people
+    body:
+      encoding: UTF-8
+      string: '{"person":{"address":"Rua Tal","address_number":"42","city":"Rio de
+        Janeiro","complement":"sala 1234","country":"Brasil","customer":true,"email":"cliente@fulano.com","federation_subscription_number":"27.206.831/0001-70","name":"Fulano
+        de Tal","neighborhood":"Centro","note":"Notas sobre este cliente...","person_type":"JuridicalPerson","phone":"(21)
+        5555-1234","site":"http://www.fulano.com","state":"RJ","supplier":false,"zip_code":"22290-080"}}'
+    headers:
+      User-Agent:
+      - Myfinance Ruby Client v0.3.3
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic Olg=
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - text/html; charset=utf-8
+      Date:
+      - Thu, 12 Nov 2015 18:12:55 GMT
+      Server:
+      - nginx/1.8.0
+      WWW-Authenticate:
+      - Basic realm="Myfinance API"
+      X-Rack-Cache:
+      - invalidate, pass
+      X-Request-Id:
+      - 982c2c99737930a7f6a154963b72a9ca
+      X-Runtime:
+      - '0.004430'
+      X-UA-Compatible:
+      - IE=Edge,chrome=1
+      Content-Length:
+      - '27'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |
+        HTTP Basic: Access denied.
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.myfinance.com.br/people
+  recorded_at: Thu, 12 Nov 2015 18:12:56 GMT
+recorded_with: VCR 2.9.3

@@ -33,7 +33,7 @@ module Myfinance
 
       {
         "Accept"         => "application/json",
-        "Content-Type"   => "application/json",
+        "Content-Type"   => args.fetch(:content_type) { "application/json" },
         "User-Agent"     => args[:user_agent],
         "Authorization"  => "Basic #{authorization_hash}",
         "ACCOUNT_ID"     => args[:account_id]
@@ -42,7 +42,7 @@ module Myfinance
 
     def body
       body = args[:body]
-      body = MultiJson.dump(body) if body.is_a?(Hash)
+      body = MultiJson.dump(body) if body.is_a?(Hash) && !has_attachments?
       body
     end
 
@@ -50,5 +50,8 @@ module Myfinance
       ::Base64.strict_encode64("#{args[:token]}:X")
     end
 
+    def has_attachments?
+      args[:content_type] == "multipart/form-data"
+    end
   end
 end

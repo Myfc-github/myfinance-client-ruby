@@ -16,12 +16,48 @@ module Myfinance
       false
     end
 
+    def attachments
+      Myfinance::Resources::Attachment.new(http)
+    end
+
+    def bank_statements
+      Myfinance::Resources::BankStatement.new(http)
+    end
+
+    def deposit_accounts
+      Myfinance::Resources::DepositAccount.new(http)
+    end
+
+    def categories
+      Myfinance::Resources::Category.new(http)
+    end
+
+    def classification_centers
+      Myfinance::Resources::ClassificationCenter.new(http)
+    end
+
+    def credit_cards
+      Myfinance::Resources::CreditCard.new(http)
+    end
+
+    def credit_card_transactions
+      Myfinance::Resources::CreditCardTransaction.new(http)
+    end
+
     def entities
       Myfinance::Resources::Entity.new(http)
     end
 
+    def financial_transactions
+      Myfinance::Resources::FinancialTransaction.new(http)
+    end
+
     def payable_accounts
       Myfinance::Resources::PayableAccount.new(http)
+    end
+
+    def people
+      Myfinance::Resources::Person.new(http)
     end
 
     def receivable_accounts

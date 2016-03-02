@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.myfinance.com.br/entities/3798/payable_accounts/new
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - Myfinance Ruby Client v0.3.3
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic YjU1MmRkNWE4NTk4Y2EwODliOTFjNWUzNTVhODNiODZlNDY5NmFlZmFjOWVhYTA1Olg=
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 20 Oct 2015 14:18:31 GMT
+      ETag:
+      - W/"f6aed2568b009acd119e6e4ec43aa7b9"
+      Server:
+      - nginx/1.8.0
+      Vary:
+      - Accept-Encoding
+      X-Rack-Cache:
+      - miss
+      X-Request-Id:
+      - e0d7de93bd41e66b070d477a5cf994fe
+      X-Runtime:
+      - '0.017850'
+      X-UA-Compatible:
+      - IE=Edge,chrome=1
+      Content-Length:
+      - '301'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"payable_account":{"entity_id":3798,"due_date":"2015-10-20","occurred_at":null,"amount":null,"ticket_amount":null,"interest_amount":null,"discount_amount":null,"total_amount":null,"description":null,"document":null,"observation":null,"remind":false,"category_id":null,"classification_center_id":null,"person_id":null,"expected_deposit_account_id":null,"create_as_recurrent":"","financial_account_taxes":[],"links":[{"rel":"create","href":"https://sandbox.myfinance.com.br/entities/3798/payable_accounts","method":"post"}]}}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.myfinance.com.br/entities/3798/payable_accounts/new
+  recorded_at: Tue, 20 Oct 2015 14:18:31 GMT
+recorded_with: VCR 2.9.3

@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.myfinance.com.br/entities/3798/attachments/new
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - Myfinance Ruby Client v0.3.3
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic YjU1MmRkNWE4NTk4Y2EwODliOTFjNWUzNTVhODNiODZlNDY5NmFlZmFjOWVhYTA1Olg=
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Thu, 05 Nov 2015 11:36:14 GMT
+      ETag:
+      - W/"d9586ed580c5fa17d2bb2b0b9d83873a"
+      Server:
+      - nginx/1.8.0
+      Vary:
+      - Accept-Encoding
+      X-Rack-Cache:
+      - miss
+      X-Request-Id:
+      - b5e36605f7179663022181f1dd2006cf
+      X-Runtime:
+      - '0.015143'
+      X-UA-Compatible:
+      - IE=Edge,chrome=1
+      Content-Length:
+      - '115'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"attachment":{"entity_id":3798,"title":null,"attachment_file_name":null,"attachment_content_type":null,"attachment_file_size":null,"created_at":null,"updated_at":null}}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.myfinance.com.br/entities/3798/attachments/new
+  recorded_at: Thu, 05 Nov 2015 11:36:14 GMT
+recorded_with: VCR 2.9.3

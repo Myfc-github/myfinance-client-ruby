@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox.myfinance.com.br/people
+    body:
+      encoding: UTF-8
+      string: '{"person":{"address":"Rua Tal","address_number":"42","city":"Rio de
+        Janeiro","complement":"sala 1234","country":"Brasil","customer":true,"email":"cliente@fulano.com","federation_subscription_number":"27.206.831/0001-70","name":"Fulano
+        de Tal","neighborhood":"Centro","note":"Notas sobre este cliente...","person_type":"JuridicalPerson","phone":"(21)
+        5555-1234","site":"http://www.fulano.com","state":"RJ","supplier":false,"zip_code":"22290-080"}}'
+    headers:
+      User-Agent:
+      - Myfinance Ruby Client v0.3.3
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic YjU1MmRkNWE4NTk4Y2EwODliOTFjNWUzNTVhODNiODZlNDY5NmFlZmFjOWVhYTA1Olg=
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Thu, 12 Nov 2015 18:12:55 GMT
+      ETag:
+      - '"5f11322b767b05dc57293daf523918ed"'
+      Location:
+      - https://sandbox.myfinance.com.br/people/199425
+      Server:
+      - nginx/1.8.0
+      Set-Cookie:
+      - _financecompany_session=BAh7BkkiD3Nlc3Npb25faWQGOgZFVEkiJWNiNWI0MjU0ZTVmOTk3M2ZiMWViMjc3MDYyMWI5ZDc1BjsAVA%3D%3D--ea81eab0ffd1dab6582311091a6b9b99c293c325;
+        path=/; HttpOnly
+      X-Rack-Cache:
+      - invalidate, pass
+      X-Request-Id:
+      - a4ae499f020a96441c95a595419c7d00
+      X-Runtime:
+      - '0.042709'
+      X-UA-Compatible:
+      - IE=Edge,chrome=1
+      Content-Length:
+      - '833'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"person":{"address":"Rua Tal","address_number":"42","city":"Rio de
+        Janeiro","complement":"sala 1234","country":"Brasil","created_at":"2015-11-12T16:12:55-02:00","customer":true,"email":"cliente@fulano.com","excel_import_id":null,"febraban_favored_code":null,"febraban_name":null,"federation_subscription_number":"27.206.831/0001-70","federation_subscription_number_only_numbers":"27206831000170","federation_subscription_type_id":null,"force_destroy":false,"id":199425,"imported_from_sync":false,"interested_users_ids":[3703],"modified_by_sync":false,"name":"Fulano
+        de Tal","neighborhood":"Centro","note":"Notas sobre este cliente...","person_type":"JuridicalPerson","phone":"(21)
+        5555-1234","site":"http://www.fulano.com","state":"RJ","supplier":false,"updated_at":"2015-11-12T16:12:55-02:00","use_count":0,"zip_code":"22290-080"}}'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.myfinance.com.br/people
+  recorded_at: Thu, 12 Nov 2015 18:12:55 GMT
+recorded_with: VCR 2.9.3
