@@ -30,6 +30,8 @@ require "myfinance/entities/person"
 require "myfinance/entities/person_collection"
 require "myfinance/entities/webhook"
 require "myfinance/entities/webhook_collection"
+require "myfinance/entities/tax"
+require "myfinance/entities/tax_collection"
 
 require "myfinance/resources/base"
 require "myfinance/resources/entity"
@@ -44,6 +46,7 @@ require "myfinance/resources/account"
 require "myfinance/resources/deposit_account"
 require "myfinance/resources/person"
 require "myfinance/resources/webhook"
+require "myfinance/resources/tax"
 
 module Myfinance
   def self.configuration

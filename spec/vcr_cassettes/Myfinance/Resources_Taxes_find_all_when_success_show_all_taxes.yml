@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox.myfinance.com.br/taxes
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - Myfinance Ruby Client v0.5.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic YjU1MmRkNWE4NTk4Y2EwODliOTFjNWUzNTVhODNiODZlNDY5NmFlZmFjOWVhYTA1Olg=
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - must-revalidate, private, max-age=0
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 14 Mar 2017 15:35:19 GMT
+      ETag:
+      - W/"ca755b6c5a5cae74319108598d64247b"
+      Server:
+      - nginx/1.10.3
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Rack-Cache:
+      - miss
+      X-RateLimit-Limit:
+      - '20'
+      X-RateLimit-Remaining:
+      - '19'
+      X-RateLimit-Reset:
+      - '2017-03-14T15:36:00Z'
+      X-Request-Id:
+      - 136f990ebadb5c03e7e0b3e8b3c97001
+      X-Runtime:
+      - '0.049017'
+      X-UA-Compatible:
+      - IE=Edge,chrome=1
+      Content-Length:
+      - '135'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '[{"tax":{"id":1,"name":"Outros"}},{"tax":{"id":2,"name":"COFINS"}},{"tax":{"id":3,"name":"CSLL"}},{"tax":{"id":4,"name":"ICMS"}},{"tax":{"id":5,"name":"INSS"}},{"tax":{"id":6,"name":"IOF"}},{"tax":{"id":7,"name":"IPI"}},{"tax":{"id":8,"name":"IRRF"}},{"tax":{"id":9,"name":"ISS"}},{"tax":{"id":10,"name":"PIS"}},{"tax":{"id":11,"name":"IRPJ"}}]'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.myfinance.com.br/taxes
+  recorded_at: Tue, 14 Mar 2017 15:35:20 GMT
+recorded_with: VCR 2.9.3
