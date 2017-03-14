@@ -20,6 +20,10 @@ module Myfinance
       Myfinance::Resources::Entity.new(http)
     end
 
+    def financial_transactions
+      Myfinance::Resources::FinancialTransaction.new(http)
+    end
+
     def payable_accounts
       Myfinance::Resources::PayableAccount.new(http)
     end
@@ -54,6 +58,10 @@ module Myfinance
 
     def webhooks
       Myfinance::Resources::Webhook.new(http)
+    end
+
+    def taxes
+      Myfinance::Resources::Tax.new(http)
     end
   end
 end

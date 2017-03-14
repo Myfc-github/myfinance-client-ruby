@@ -25,7 +25,7 @@ module Myfinance
         body:             body,
         headers:          headers,
         accept_encoding:  "gzip"
-      }.reject { |k,v| v.nil? }
+      }.reject { |_k,v| v.nil? }
     end
 
     def headers

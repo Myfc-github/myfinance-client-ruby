@@ -11,7 +11,7 @@ module Myfinance
       attribute :force_destroy, Boolean
       attribute :id, Integer
       attribute :imported_from_sync, Boolean
-      attribute :initial_balance, String
+      attribute :initial_balance, Decimal
       attribute :last_transaction_date, Date
       attribute :name, String
       attribute :sync_response, String

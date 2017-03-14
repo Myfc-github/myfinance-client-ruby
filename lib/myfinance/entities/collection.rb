@@ -12,7 +12,7 @@ module Myfinance
         @response = response
         @collection = []
         @headers = response.headers['Link'].split(',') rescue []
-       end
+      end
 
       def self.build(response)
         self.new(response).build

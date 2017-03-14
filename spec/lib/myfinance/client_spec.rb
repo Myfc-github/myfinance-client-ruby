@@ -84,6 +84,16 @@ describe Myfinance::Client do
     end
   end
 
+  describe "#financial_transactions" do
+    it "instantiates a new Myfinance::Resources::FinancialTransaction" do
+      expect(
+        Myfinance::Resources::FinancialTransaction
+      ).to receive(:new).with(subject.http)
+
+      subject.financial_transactions
+    end
+  end
+
   describe "#deposit_accounts" do
     it "instantiates a new Myfinance::Resources::DepositAccount" do
       expect(

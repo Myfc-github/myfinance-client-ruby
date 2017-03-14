@@ -1,0 +1,80 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox.myfinance.com.br/entities/3798/deposit_accounts/14268/financial_transactions
+    body:
+      encoding: UTF-8
+      string: '{"financial_transaction":{"amount":68.5,"occurred_at":"2011-07-15","type":"QUALQUER"}}'
+    headers:
+      User-Agent:
+      - Myfinance Ruby Client v0.5.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - Basic YjU1MmRkNWE4NTk4Y2EwODliOTFjNWUzNTVhODNiODZlNDY5NmFlZmFjOWVhYTA1Olg=
+  response:
+    status:
+      code: 500
+      message: Internal Server Error
+    headers:
+      Content-Type:
+      - text/html; charset=utf-8
+      Date:
+      - Mon, 13 Mar 2017 21:49:51 GMT
+      Server:
+      - nginx/1.10.3
+      Vary:
+      - Origin
+      X-Rack-Cache:
+      - invalidate, pass
+      X-Request-Id:
+      - 422c9f761959479d8b010c26d60a58d5
+      X-Runtime:
+      - '0.089044'
+      Content-Length:
+      - '1403'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        PCFET0NUWVBFIGh0bWw+CjxodG1sPgo8aGVhZD4KICA8bWV0YSBjb250ZW50
+        PSd0ZXh0L2h0bWw7IGNoYXJzZXQ9dXRmLTgnIGh0dHAtZXF1aXY9J0NvbnRl
+        bnQtVHlwZSc+CiAgPHRpdGxlPk9wcyEgRXJybyBubyBTZXJ2aWRvci4gKDUw
+        MCk8L3RpdGxlPgogIDxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+CiAgICBib2R5
+        e2NvbG9yOiM2ODVGNEQ7Zm9udC1zaXplOjEwcHg7bGluZS1oZWlnaHQ6MS42
+        ZW07Zm9udC1mYW1pbHk6IkhlbHZldGljYSBOZXVlIixoZWx2ZXRpY2EsYXJp
+        YWwsc2Fucy1zZXJpZjttYXJnaW46MDtwYWRkaW5nOjAgMTAwcHg7YmFja2dy
+        b3VuZDojRjhGNUVGO30KICAgIGgxe2NvbG9yOiMwMDMzNjY7Zm9udC1zaXpl
+        OjIuMGVtO2xpbmUtaGVpZ2h0OjFlbTtmb250LXdlaWdodDoyMDA7dGV4dC10
+        cmFuc2Zvcm06dXBwZXJjYXNlO2xldHRlci1zcGFjaW5nOjFweDttYXJnaW46
+        MWVtIDAgMmVtIDA7cGFkZGluZy1yaWdodDowO3BhZGRpbmctbGVmdDowO30K
+        ICAgIGgye2ZvbnQtc2l6ZTozZW07Zm9udC13ZWlnaHQ6MjAwO30KICAgIHAs
+        ZHQsZGR7Zm9udC1zaXplOjEuNmVtO2xpbmUtaGVpZ2h0OjEuNmVtO30KICAg
+        IGRse21hcmdpbjowO3BhZGRpbmc6MCAwO30KICAgIGR0e21hcmdpbjowIDA7
+        cGFkZGluZzowO30KICAgIGRke21hcmdpbjowIDIwcHg7cGFkZGluZzowO2Rp
+        c3BsYXk6bGlzdC1pdGVtO30KICAgIC5jb3B5cmlnaHR7Zm9udC1zaXplOjEx
+        cHg7bWFyZ2luOjYwcHggMCAwIDA7fQogIDwvc3R5bGU+CjwvaGVhZD4KCjxi
+        b2R5PgogIDwhLS0gVGhpcyBmaWxlIGxpdmVzIGluIHB1YmxpYy81MDAuaHRt
+        bCAtLT4KCiAgPGRpdiBjbGFzcz0iY29udGFpbmVyIj4KICAgIDxoMT48aW1n
+        IHNyYz0iL2Fzc2V0cy9sb2dvLWFwcC1teWZpbmFuY2UucG5nIiBhbHQ9Ik15
+        RmluYW5jZSIgdGl0bGU9Ik15RmluYW5jZSI+PC9oMT4KICAgIDxoMj5PcHMh
+        IEVycm8gbm8gU2Vydmlkb3IuPC9oMj4KICAgIDxwPkRlc2N1bHBlLCBtYXMg
+        bm9zc29zIHNlcnZpZG9yZXMgZW5jb250cmFyYW0gYWxndW1hIGRpZmljdWxk
+        YWRlIGluZXNwZXJhZGEgYW8gcHJvY2Vzc2FyIG8gc2V1IHBlZGlkby48L3A+
+        CiAgICA8cD5BIG5vc3NhIGVxdWlwZSByZWNlYmV1IHVtYSBub3RpZmljYcOn
+        w6NvIGRlc3RlIGV2ZW50byBlIGrDoSBlc3RhbW9zIHRyYWJhbGhhbmRvIGVt
+        IHN1YSBzb2x1w6fDo28uPC9wPgogICAgPHA+UG9yIGZhdm9yLCB0ZW50ZSBu
+        b3ZhbWVudGUgbWFpcyB0YXJkZS48L3A+CiAgICA8ZGl2IGNsYXNzPSJjb3B5
+        cmlnaHQiPjxhIHN0eWxlPSJjb2xvcjogIzk1ODk3MCIgaHJlZj0iaHR0cDov
+        L215ZnJlZWNvbW0uY29tLmJyIj5NeWZyZWVjb21tPC9hPi4gVG9kb3Mgb3Mg
+        ZGlyZWl0b3MgcmVzZXJ2YWRvcy4gPC9kaXY+CiAgPC9kaXY+CjwvYm9keT4K
+        PC9odG1sPgo=
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: https://sandbox.myfinance.com.br/entities/3798/deposit_accounts/14268/financial_transactions
+  recorded_at: Mon, 13 Mar 2017 21:49:51 GMT
+recorded_with: VCR 2.9.3

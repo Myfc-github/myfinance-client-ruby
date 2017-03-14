@@ -46,7 +46,7 @@ module Myfinance
       #   Documentation: https://app.myfinance.com.br/docs/api/receivable_accounts#delete_destroy
       #
       def destroy(id, entity_id)
-        http.delete(endpoint_for(id, entity_id, :destroy)) do |response|
+        http.delete(endpoint_for(id, entity_id, :destroy)) do |_response|
           true
         end
       end

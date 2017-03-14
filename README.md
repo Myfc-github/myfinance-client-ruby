@@ -33,9 +33,10 @@ Or install it yourself as:
 client = Myfinance.client("YOUR_TOKEN_HERE")
 ```
 
-##### Now you have access to every API endpoint:
+##### Now you have access to these API endpoints:
 
 * [Entities API](https://app.myfinance.com.br/docs/api/entities) as `client.entities`
+* [FinancialTransactions API](https://app.myfinance.com.br/docs/api/financial_transactions) as `client.financial_transactions`
 * [PayableAccounts API](https://app.myfinance.com.br/docs/api/payable_accounts) as `client.payable_accounts`
 * [ReceivableAccounts API](https://app.myfinance.com.br/docs/api/receivable_accounts) as `client.receivable_accounts`
 * [Attachments API](https://app.myfinance.com.br/docs/api/attachments) as `client.attachments`
@@ -79,6 +80,83 @@ client = Myfinance.client("YOUR_TOKEN_HERE")
     </td>
   </tr>
 </table>
+
+#### [FinancialTransactions](https://app.myfinance.com.br/docs/api/financial_transactions)
+
+<table>
+  <tr>
+    <th>HTTP method</th>
+    <th>Endpoint</th>
+    <th>Client method</th>
+  </tr>
+  <tr>
+    <td><code>GET</code></td>
+    <td>
+      <a href="https://app.myfinance.com.br/docs/api/financial_transactions#get_index" target="_blank">
+        /entities/:entity_id/deposit_accounts/:deposit_account_id/financial_transactions
+      </a>
+    </td>
+    <td>
+      <code>client.financial_transactions.find_all</code>
+    </td>
+  </tr>
+  <tr>
+    <td><code>GET</code></td>
+    <td>
+      <a href="https://app.myfinance.com.br/docs/api/financial_transactions#get_show" target="_blank">
+        /entities/:entity_id/deposit_accounts/:deposit_account_id/financial_transactions/:id
+      </a>
+    </td>
+    <td>
+      <code>client.financial_transactions.find</code>
+    </td>
+  </tr>
+  <tr>
+    <td><code>POST</code></td>
+    <td>
+      <a href="https://app.myfinance.com.br/docs/api/financial_transactions#post_create" target="_blank">
+        /entities/:entity_id/deposit_accounts/:deposit_account_id/financial_transactions
+      </a>
+    </td>
+    <td>
+      <code>client.financial_transactions.create</code>
+    </td>
+  </tr>
+  <tr>
+    <td><code>PUT</code></td>
+    <td>
+      <a href="https://app.myfinance.com.br/docs/api/financial_transactions#put_update" target="_blank">
+        /entities/:entity_id/deposit_accounts/:deposit_account_id/financial_transactions/:id
+      </a>
+    </td>
+    <td>
+      <code>client.financial_transactions.update</code>
+    </td>
+  </tr>
+  <tr>
+    <td><code>DELETE</code></td>
+    <td>
+      <a href="https://app.myfinance.com.br/docs/api/financial_transactions#delete_destroy" target="_blank">
+        /entities/:entity_id/deposit_accounts/:deposit_account_id/financial_transactions/:id
+      </a>
+    </td>
+    <td>
+      <code>client.financial_transactions.destroy</code>
+    </td>
+  </tr>
+  <tr>
+    <td><code>DELETE</code></td>
+    <td>
+      <a href="https://app.myfinance.com.br/docs/api/financial_transactions#delete_destroy_many" target="_blank">
+        /entities/:entity_id/deposit_accounts/:deposit_account_id/financial_transactions/destroy_many?selected_ids=:id1,id2,id3
+      </a>
+    </td>
+    <td>
+      <code>client.financial_transactions.destroy_many</code>
+    </td>
+  </tr>
+</table>
+
 
 #### [PayableAccounts](https://app.myfinance.com.br/docs/api/payable_accounts)
 
