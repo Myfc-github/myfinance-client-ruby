@@ -2,6 +2,7 @@ require "spec_helper"
 
 describe Myfinance::Resources::ClassificationCenter, vcr: true do
   let(:entity_klass) { Myfinance::Entities::ClassificationCenter }
+  let(:page) { 2 }
 
   let(:entity_collection) do
     Myfinance::Entities::ClassificationCenterCollection
@@ -15,6 +16,15 @@ describe Myfinance::Resources::ClassificationCenter, vcr: true do
         expect(subject).to be_a(entity_collection)
         expect(subject.collection.first).to be_a(entity_klass)
         expect(subject.collection.first.name).to eq("Centro de Custo Tal")
+      end
+
+      context "with page" do
+        subject { client.classification_centers.find_all(page) }
+
+        it "returns paginated url" do
+          url = subject.response.request.base_url
+          expect(url).to include("page=#{page}")
+        end
       end
     end
 
@@ -78,6 +88,15 @@ describe Myfinance::Resources::ClassificationCenter, vcr: true do
         )
         expect(result).to be_a(entity_collection)
         expect(result.collection.first).to be_falsy
+      end
+      context "with page" do
+        let(:search_params) { { entity_id_equals: 3798, name_contains: "Centro" } }
+        subject { client.classification_centers.find_by(search_params, page) } 
+
+        it "returns paginated url " do
+          url = subject.response.request.base_url
+          expect(url).to include("page=#{page}")
+        end
       end
     end
   end

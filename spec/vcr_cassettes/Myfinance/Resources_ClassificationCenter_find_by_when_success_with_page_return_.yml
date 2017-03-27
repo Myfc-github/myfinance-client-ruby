@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://sandbox.myfinance.com.br/classification_centers
+    uri: https://sandbox.myfinance.com.br/classification_centers?search[entity_id_equals]=3798&search[name_contains]=Centro&page=1
     body:
       encoding: UTF-8
       string: "{}"
@@ -27,9 +27,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Mon, 27 Mar 2017 20:30:31 GMT
+      - Mon, 27 Mar 2017 19:54:18 GMT
       ETag:
-      - W/"5f03c02b3e25aa8a06b2cf9484dbbb99"
+      - W/"f024db5329094bae388f251ec2fd67ac"
       Server:
       - nginx/1.10.3
       Vary:
@@ -42,24 +42,23 @@ http_interactions:
       X-RateLimit-Remaining:
       - '19'
       X-RateLimit-Reset:
-      - '2017-03-27T20:31:00Z'
+      - '2017-03-27T19:55:00Z'
       X-Request-Id:
-      - c07abfe17cdb8139cbbc3fc19adbdcad
+      - 10e22ebf46d28c0322ff07205e86ed68
       X-Runtime:
-      - '0.045377'
+      - '0.048591'
       X-UA-Compatible:
       - IE=Edge,chrome=1
       Content-Length:
-      - '268'
+      - '211'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
       string: '[{"classification_center":{"cost_center":true,"created_at":"2015-11-13T16:40:42-02:00","entity_id":3798,"excel_import_id":null,"guid":null,"id":17982,"imported_from_sync":false,"modified_by_sync":false,"name":"Centro
-        de Custo Tal","revenue_center":false,"updated_at":"2015-11-13T16:40:42-02:00","use_count":0}},{"classification_center":{"cost_center":true,"created_at":"2017-03-21T16:34:11-03:00","entity_id":3798,"excel_import_id":null,"guid":null,"id":18745,"imported_from_sync":false,"modified_by_sync":false,"name":"Socializa\u00e7\u00e3o
-        2","revenue_center":true,"updated_at":"2017-03-21T16:34:11-03:00","use_count":0}}]'
+        de Custo Tal","revenue_center":false,"updated_at":"2015-11-13T16:40:42-02:00","use_count":0}}]'
     http_version: '1.1'
     adapter_metadata:
-      effective_url: https://sandbox.myfinance.com.br/classification_centers
-  recorded_at: Mon, 27 Mar 2017 20:30:32 GMT
+      effective_url: https://sandbox.myfinance.com.br/classification_centers?search[entity_id_equals]=3798&search[name_contains]=Centro&page=1
+  recorded_at: Mon, 27 Mar 2017 19:54:19 GMT
 recorded_with: VCR 2.9.3
