@@ -15,8 +15,8 @@ module Myfinance
       #
       #   Documentation: https://app.myfinance.com.br/docs/api/classification_centers#get_index
       #
-      def find_all
-        http.get("/classification_centers", body: {}) do |response|
+      def find_all(page = nil)
+        http.get(index_endpoint(page)) do |response|
           respond_with_collection(response)
         end
       end
@@ -43,11 +43,13 @@ module Myfinance
       #
       #   Documentation: https://app.myfinance.com.br/docs/api/classification_centers
       #
-      def find_by(params)
+      def find_by(params, page = nil)
         values = params.map { |k,v| "search[#{k}]=#{v}" }.join("&")
-        http.get(
-          URI.encode("/classification_centers?#{values}"), body: {}
-        ) do |response|
+        search_endpoint = endpoint + "?#{values}"
+        search_endpoint += "&page=#{page}" if page
+        encoded_endpoint = URI.encode(search_endpoint)
+
+        http.get(encoded_endpoint, body: {}) do |response|
           respond_with_collection(response)
         end
       end
@@ -61,9 +63,7 @@ module Myfinance
       #   Documentation: https://app.myfinance.com.br/docs/api/classification_centers#post_create
       #
       def create(params)
-        http.post(
-          "/classification_centers", body: { classification_center: params }
-        ) do |response|
+        http.post(endpoint, body: { classification_center: params }) do |response|
           respond_with_object response, "classification_center"
         end
       end
@@ -77,10 +77,7 @@ module Myfinance
       #   Documentation: https://app.myfinance.com.br/docs/api/classification_centers#put_update
       #
       def update(id, params)
-        http.put(
-          "/classification_centers/#{id}",
-          body: { classification_center: params }
-        ) do |response|
+        http.put(endpoint + "/#{id}", body: { classification_center: params }) do |response|
           respond_with_object response, "classification_center"
         end
       end
@@ -94,9 +91,20 @@ module Myfinance
       #   Documentation: https://app.myfinance.com.br/docs/api/classification_centers#delete_destroy
       #
       def destroy(id)
-        http.delete("/classification_centers/#{id}", body: {}) do |response|
+        http.delete(endpoint + "/#{id}") do |response|
           respond_with_object response, "classification_center"
         end
+      end
+
+      private
+
+      def endpoint
+        "/classification_centers" 
+      end
+
+      def index_endpoint(page)
+        return endpoint unless page
+        endpoint + "?page=#{page}"
       end
     end
   end
