@@ -8,6 +8,6 @@ describe Myfinance::Entities::ReceivableAccount do
     :discount_amount, :total_amount, :description, :document, :document_emission_date, :observation, :remind,
     :reminded_at, :income_tax_relevant, :category_id, :classification_center_id, :expected_deposit_account_id,
     :recurrence_id, :person_id, :recurrent, :parcelled, :recurrence_period, :number_of_parcels, :current_parcel,
-    :competency_month, :financial_account_taxes_attributes, :reconciliations, :links, :created_at, :updated_at
+    :competency_month, :tax_charges_attributes, :reconciliations, :links, :created_at, :updated_at
   ]
 end

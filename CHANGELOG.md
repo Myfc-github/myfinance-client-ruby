@@ -9,9 +9,11 @@
   - `total_amount`, equals nominal_amount + ticket_amount + interest_amount - discount_amount
   - `api_related`, `true` if `Sale` was created by the API, `false` otherwise
   - `tax_charges_attributes`, reflecting the fact that `Sale` can now have taxes
-### Attribute renamed
+### Attributes renamed
 - `Sale`:
   - `liquidation_week_day` changed to `liquidation_weekday`, conforming to Rails' convention
+- `FinancialAccount`:
+  - `financial_account_taxes_attributes` was changed to `tax_charges_attributes`
 ## v1.3.1
 ### Fixes
 - Fix lib require to be relatively

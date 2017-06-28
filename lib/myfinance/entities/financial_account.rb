@@ -22,7 +22,7 @@ module Myfinance
       end
       [:created_at, :updated_at].each { |k| attribute k, DateTime }
 
-      attribute :financial_account_taxes_attributes, Array[Hash]
+      attribute :tax_charges_attributes, Array[Hash]
       attribute :reconciliations, Hash[String => Array]
       attribute :links, Array[Hash[String => String]]
     end

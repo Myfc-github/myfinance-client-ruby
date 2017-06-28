@@ -117,7 +117,7 @@ describe Myfinance::Resources::ReceivableAccount do
         expect(subject.number_of_parcels).to be_nil
         expect(subject.current_parcel).to be_nil
         expect(subject.competency_month).to eq("2015-08")
-        expect(subject.financial_account_taxes_attributes).to be_empty
+        expect(subject.tax_charges_attributes).to be_empty
       end
 
       context "when the receivable_account has occurred_at value defined" do
