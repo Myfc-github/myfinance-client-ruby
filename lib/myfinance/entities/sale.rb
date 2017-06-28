@@ -8,6 +8,7 @@ module Myfinance
       attribute :confirmed_at
       attribute :created_at
       attribute :custom_classifications
+      attribute :custom_classifications
       attribute :days_to_liquidation
       attribute :description
       attribute :discount_amount
@@ -30,6 +31,7 @@ module Myfinance
       attribute :sale_account_id
       attribute :status
       attribute :summary
+      attribute :tax_charges_attributes
       attribute :ticket_amount
       attribute :total_amount
       attribute :updated_at

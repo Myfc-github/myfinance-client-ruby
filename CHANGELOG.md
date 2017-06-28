@@ -8,7 +8,7 @@
   - `discount_amount`, amount that will be reduced because of a discount
   - `total_amount`, equals nominal_amount + ticket_amount + interest_amount - discount_amount
   - `api_related`, `true` if `Sale` was created by the API, `false` otherwise
-
+  - `tax_charges_attributes`, reflecting the fact that `Sale` can now have taxes
 ### Attribute renamed
 - `Sale`:
   - `liquidation_week_day` changed to `liquidation_weekday`, conforming to Rails' convention

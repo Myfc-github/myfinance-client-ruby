@@ -1,13 +1,14 @@
 require "spec_helper"
 
 describe Myfinance::Entities::Sale do
-  it_behaves_like "entity_attributes", %i[
+  it_behaves_like "entity_attributes", %i(
     api_related
     attachments_count
     category_id
     classification_center_id
     confirmed_at
     created_at
+    custom_classifications
     custom_classifications
     days_to_liquidation
     description
@@ -31,8 +32,9 @@ describe Myfinance::Entities::Sale do
     sale_account_id
     status
     summary
+    tax_charges_attributes
     ticket_amount
     total_amount
     updated_at
-  ]
+  )
 end
