@@ -43,3 +43,12 @@ Style/SpaceAroundEqualsInParameterDefault:
 Style/StringLiterals:
   StyleGuide: "https://github.com/bbatsov/ruby-style-guide#consistent-string-literals"
   EnforcedStyle: double_quotes
+Style/PercentLiteralDelimiters:
+  StyleGuide: "https://github.com/bbatsov/ruby-style-guide#percent-literal-braces"
+  PreferredDelimiters:
+    default: ()
+    '%i': '[]'
+    '%I': '[]'
+    '%r': '{}'
+    '%w': '[]'
+    '%W': '[]'

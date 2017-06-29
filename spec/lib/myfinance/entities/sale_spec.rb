@@ -1,7 +1,7 @@
 require "spec_helper"
 
 describe Myfinance::Entities::Sale do
-  it_behaves_like "entity_attributes", %i(
+  it_behaves_like "entity_attributes", %i[
     api_related
     attachments_count
     category_id
@@ -36,5 +36,5 @@ describe Myfinance::Entities::Sale do
     ticket_amount
     total_amount
     updated_at
-  )
+  ]
 end
