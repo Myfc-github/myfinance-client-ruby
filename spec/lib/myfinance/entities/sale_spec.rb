@@ -9,7 +9,6 @@ describe Myfinance::Entities::Sale do
     confirmed_at
     created_at
     custom_classifications
-    custom_classifications
     days_to_liquidation
     description
     discount_amount
