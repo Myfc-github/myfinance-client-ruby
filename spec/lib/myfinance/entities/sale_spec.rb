@@ -16,6 +16,7 @@ describe Myfinance::Entities::Sale do
     estimated_liquidated_at
     fee_percentage
     fee_percentage_amount
+    net_amount
     financial_account_id
     fixed_fee_amount
     id

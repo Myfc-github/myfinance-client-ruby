@@ -36,6 +36,7 @@ module Myfinance
       attribute :ticket_amount
       attribute :total_amount
       attribute :updated_at
+      attribute :net_amount
     end
   end
 end
