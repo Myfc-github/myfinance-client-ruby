@@ -2,17 +2,18 @@ require "spec_helper"
 
 describe Myfinance::Entities::SaleAccount do
   it_behaves_like "entity_attributes", %i[
+    category_id
+    classification_center_id
+    consolidate
+    created_at
+    custom_classifications
+    description
+    entity_id
     id
     name
-    entity_id
-    description
-    provider
     payment_methods
-    category_id
     person_id
-    classification_center_id
-    custom_classifications
-    created_at
+    provider
     updated_at
   ]
 end

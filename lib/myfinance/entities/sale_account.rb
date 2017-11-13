@@ -1,17 +1,18 @@
 module Myfinance
   module Entities
     class SaleAccount < Base
+      attribute :category_id
+      attribute :classification_center_id
+      attribute :consolidate
+      attribute :created_at
+      attribute :custom_classifications
+      attribute :description
+      attribute :entity_id
       attribute :id
       attribute :name
-      attribute :entity_id
-      attribute :description
-      attribute :provider
       attribute :payment_methods
-      attribute :category_id
       attribute :person_id
-      attribute :classification_center_id
-      attribute :custom_classifications
-      attribute :created_at
+      attribute :provider
       attribute :updated_at
     end
   end
