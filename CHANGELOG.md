@@ -1,4 +1,7 @@
 # Changelog
+## v1.6.2
+- `SaleAccount` now has the following new attribute:
+  - `consolidate`, which represents wether associated `sales` will be consolidated into one `ReceivableAccount` per date or one per `Sale`
 ## v1.6.1
 - `Sale` now has the following new attribute:
   - `net_amount`, which represents the `total_amount` - withholded `tax_charges`
