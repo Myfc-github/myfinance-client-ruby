@@ -43,7 +43,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "typhoeus", "~> 0.8"
   spec.add_dependency "multi_json", "~> 1.11"
   spec.add_dependency "virtus", "~> 1.0.5"
-  spec.add_dependency "mime-types", "~> 2.99"
+  spec.add_dependency "mime-types", ">= 1.16", "< 3.0"
   spec.add_dependency "require_all", "~> 1.4.0"
 
   spec.add_development_dependency "bundler", "~> 1.10"
