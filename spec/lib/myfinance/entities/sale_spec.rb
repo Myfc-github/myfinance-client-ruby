@@ -20,6 +20,8 @@ describe Myfinance::Entities::Sale do
     financial_account_id
     fixed_fee_amount
     id
+    installment_count
+    installment_number
     interest_amount
     issuer
     links
@@ -28,6 +30,7 @@ describe Myfinance::Entities::Sale do
     nominal_amount
     observation
     occurred_at
+    original_sale_id
     payment_method
     person_id
     receivable_amount

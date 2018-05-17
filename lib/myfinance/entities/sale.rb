@@ -18,14 +18,18 @@ module Myfinance
       attribute :financial_account_id
       attribute :fixed_fee_amount
       attribute :id
+      attribute :installment_count
+      attribute :installment_number
       attribute :interest_amount
       attribute :issuer
       attribute :links
       attribute :liquidated_at
       attribute :liquidation_weekday
+      attribute :net_amount
       attribute :nominal_amount
       attribute :observation
       attribute :occurred_at
+      attribute :original_sale_id
       attribute :payment_method
       attribute :person_id
       attribute :receivable_amount
@@ -36,7 +40,6 @@ module Myfinance
       attribute :ticket_amount
       attribute :total_amount
       attribute :updated_at
-      attribute :net_amount
     end
   end
 end
