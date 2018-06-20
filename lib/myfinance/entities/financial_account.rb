@@ -2,7 +2,7 @@ module Myfinance
   module Entities
     class FinancialAccount < Base
       [:id, :entity_id, :status, :category_id, :person_id, :recurrence_id, :number_of_parcels,
-        :current_parcel, :classification_center_id, :expected_deposit_account_id, :sale_account_id].each do |k|
+       :current_parcel, :classification_center_id, :expected_deposit_account_id, :sale_account_id].each do |k|
         attribute k, Integer
       end
 
