@@ -14,6 +14,7 @@ module Myfinance
       attribute :person_id
       attribute :provider
       attribute :updated_at
+      attribute :expected_deposit_account_id
     end
   end
 end

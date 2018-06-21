@@ -9,6 +9,7 @@ describe Myfinance::Entities::SaleAccount do
     custom_classifications
     description
     entity_id
+    expected_deposit_account_id
     id
     name
     payment_methods
