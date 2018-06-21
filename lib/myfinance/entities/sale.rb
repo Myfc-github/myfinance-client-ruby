@@ -1,6 +1,7 @@
 module Myfinance
   module Entities
     class Sale < Base
+      attribute :amount_difference
       attribute :api_related
       attribute :attachments
       attribute :attachments_count

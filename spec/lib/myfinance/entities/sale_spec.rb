@@ -2,6 +2,7 @@ require "spec_helper"
 
 describe Myfinance::Entities::Sale do
   it_behaves_like "entity_attributes", %i[
+    amount_difference
     api_related
     attachments
     attachments_count
@@ -28,8 +29,8 @@ describe Myfinance::Entities::Sale do
     links
     liquidated_at
     liquidation_weekday
-    nominal_amount
     net_amount
+    nominal_amount
     observation
     occurred_at
     original_sale_id
