@@ -2,11 +2,11 @@ module Myfinance
   module Entities
     class Sale < Base
       attribute :amount_difference
-      attribute :api_related
       attribute :attachments
       attribute :attachments_count
       attribute :category_id
       attribute :classification_center_id
+      attribute :competency_month
       attribute :confirmed_at
       attribute :created_at
       attribute :custom_classifications
@@ -23,6 +23,7 @@ module Myfinance
       attribute :id
       attribute :installment_count
       attribute :installment_number
+      attribute :installments
       attribute :interest_amount
       attribute :issuer
       attribute :links
