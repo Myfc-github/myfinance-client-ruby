@@ -23,7 +23,7 @@ module Myfinance
       attribute :id
       attribute :installment_count
       attribute :installment_number
-      attribute :installments
+      attribute :installments, Array[Hash]
       attribute :interest_amount
       attribute :issuer
       attribute :links
