@@ -7,6 +7,7 @@ module Myfinance
       attribute :classification_center_id, Integer
       attribute :category_id, Integer
       attribute :custom_classifications, Array[Hash]
+      attribute :classification_center_classifications, Array[Hash]
       attribute :amount, Decimal
       attribute :description, String
       attribute :occurred_at, Date
