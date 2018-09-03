@@ -8,5 +8,6 @@ describe Myfinance::Entities::FinancialTransaction do
                                           bank_statement_id balance_difference force_destroy divided
                                           attachments_count duplicity_suspicion_id excel_import_id
                                           observation api_related bank_slips_count reconciled indexed_at
-                                          automatic_rule_related classification_center_id custom_classifications]
+                                          automatic_rule_related classification_center_id  classification_center_classifications
+                                          custom_classifications]
 end
