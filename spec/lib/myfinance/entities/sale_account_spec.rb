@@ -7,6 +7,7 @@ describe Myfinance::Entities::SaleAccount do
     consolidate
     created_at
     custom_classifications
+    classification_center_classifications
     description
     entity_id
     expected_deposit_account_id

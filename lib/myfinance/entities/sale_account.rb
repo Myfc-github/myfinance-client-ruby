@@ -5,7 +5,8 @@ module Myfinance
       attribute :classification_center_id
       attribute :consolidate
       attribute :created_at
-      attribute :custom_classifications
+      attribute :custom_classifications, Array[Hash]
+      attribute :classification_center_classifications, Array[Hash]
       attribute :description
       attribute :entity_id
       attribute :id
