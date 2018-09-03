@@ -7,6 +7,7 @@ describe Myfinance::Entities::Sale do
     attachments_count
     category_id
     classification_center_id
+    classification_center_classifications
     competency_month
     confirmed_at
     created_at

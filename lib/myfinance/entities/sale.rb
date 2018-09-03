@@ -6,10 +6,11 @@ module Myfinance
       attribute :attachments_count
       attribute :category_id
       attribute :classification_center_id
+      attribute :classification_center_classifications, Array[Hash]
       attribute :competency_month
       attribute :confirmed_at
       attribute :created_at
-      attribute :custom_classifications
+      attribute :custom_classifications, Array[Hash]
       attribute :days_to_liquidation
       attribute :description
       attribute :discount_amount
