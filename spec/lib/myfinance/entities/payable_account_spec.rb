@@ -9,6 +9,6 @@ describe Myfinance::Entities::PayableAccount do
     reminded_at income_tax_relevant category_id classification_center_id expected_deposit_account_id
     recurrence_id person_id recurrent parcelled recurrence_period number_of_parcels current_parcel
     competency_month financial_account_taxes_attributes tax_charges reconciliations
-    links created_at updated_at custom_classifications sale_account_id sale_ids
+    links created_at updated_at custom_classifications classification_center_classifications sale_account_id sale_ids
   ]
 end
