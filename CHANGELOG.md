@@ -1,6 +1,9 @@
 # Changelog
-
-## v1.8.0
+## v1.8.2
+### Added
+- `Sale` now has the following new attribute:
+  * `receivable_account_total_amount`
+## v1.8.1
 ### Fixes
 - Changed URL encoding to support special characters. Ex: '&'
 

@@ -46,6 +46,7 @@ module Myfinance
       attribute :ticket_amount
       attribute :total_amount
       attribute :updated_at
+      attribute :receivable_account_total_amount
     end
   end
 end
