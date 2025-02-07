@@ -6,6 +6,9 @@ Gem::Specification.new do |spec|
   spec.name                 = "myfinance"
   spec.version              = Myfinance::VERSION
   spec.authors              = [
+    "Lucas P. Borges",
+    "Jonathas Eloi",
+    "Paulo Henrique Lopes",
     "Eduardo Hertz",
     "Guilherme Franco",
     "Rafael B. Tauil",
@@ -13,6 +16,7 @@ Gem::Specification.new do |spec|
     "Vagner Zampieri"
   ]
   spec.email                = [
+    "lucas.p.sec@gmail.com",
     "eduardohertz@gmail.com",
     "g.francosilva@gmail.com",
     "rafael@tauil.com.br",

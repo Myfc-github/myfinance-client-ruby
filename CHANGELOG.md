@@ -1,4 +1,7 @@
 # Changelog
+## 1.8.3
+## Chore
+- Loosen `mime-types` version constraint to ensure compatibility with Rails 6
 ## v1.8.2
 ### Added
 - `Sale` now has the following new attribute:
