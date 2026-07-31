@@ -2,11 +2,8 @@ PATH
   remote: .
   specs:
     myfinance (1.8.4)
-      ethon (= 0.16.0)
-      ffi (= 1.17.1)
-      mime-types (= 3.3.0)
-      mime-types-data (= 3.2025.0107)
-      multi_json (= 1.15.0)
+      mime-types (>= 1.16, <= 3.4.0)
+      multi_json (~> 1.11)
       require_all (~> 1.4.0)
       typhoeus (~> 0.8)
       virtus (~> 1.0.5)
