@@ -17,6 +17,7 @@ module Myfinance
       attribute :revenue, Boolean
       attribute :updated_at, DateTime
       attribute :use_count, Integer
+      attribute :archived_at, DateTime
     end
   end
 end
