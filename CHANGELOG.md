@@ -1,4 +1,8 @@
 # Changelog
+## v1.8.4
+### Added
+- `Category` now has the following new attribute:
+  * `archived_at`
 ## 1.8.3
 ## Chore
 - Loosen `mime-types` version constraint to ensure compatibility with Rails 6
