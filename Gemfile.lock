@@ -87,7 +87,7 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_print (~> 1.1)
-  bundler (~> 1.10)
+  bundler (>= 1.10)
   codeclimate-test-reporter (~> 0.4)
   myfinance!
   pry (~> 0.9)
@@ -99,4 +99,4 @@ DEPENDENCIES
   webmock (~> 1.9.3)
 
 BUNDLED WITH
-   1.17.3
+   2.6.3
